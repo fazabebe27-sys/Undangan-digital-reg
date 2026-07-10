@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regenerasi 2026 - Let's Celebrate the Memories!</title>
+    
+    <!-- Google Fonts: Monoton (Hero), Righteous (Headings), Poppins (Body), Bungee (Countdown) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Monoton&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Righteous&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome untuk ikon bergaya retro -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS untuk tata letak responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepPurple: '#2E0854',
+                        midnightBlue: '#1A1371',
+                        cyanGlow: '#00F0F0',
+                        neonPink: '#FF007F',
+                        festivalGold: '#FFD700',
+                        magicPurple: '#BA2BE2',
+                        sunsetOrange: '#FF5722',
+                        retroCharcoal: '#120224'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Konfigurasi Font & Variabel Global */
+        :root {
+            --font-monoton: 'Monoton', sans-serif;
+            --font-righteous: 'Righteous', sans-serif;
+            --font-poppins: 'Poppins', sans-serif;
+            --font-bungee: 'Bungee', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-poppins);
+            background-color: #120224; /* retroCharcoal / Deep Purple base */
+            color: #FAF6EE; 
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+            font-family: var(--font-monoton);
+        }
+
+        h2, h3, h4, .font-righteous {
+            font-family: var(--font-righteous);
+        }
+
+        .font-bungee {
+            font-family: var(--font-bungee);
+        }
+
+        /* 1. ANIMASI TRANSISI SCROLL REVEAL */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Gaya Tirai Festival Neon (Deep Purple & Magic Purple) */
+        .curtain-container {
+            z-index: 100;
+            background: rgba(10, 2, 20, 0.99);
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .curtain-half {
+            background-color: #2E0854;
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    rgba(255, 0, 127, 0.15) 0px, 
+                    rgba(255, 0, 127, 0.15) 30px, 
+                    transparent 30px, 
+                    transparent 60px
+                ),
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+            transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .curtain-left {
+            border-right: 8px double #FF007F;
+            filter: drop-shadow(5px 0px 15px rgba(255, 0, 127, 0.5));
+        }
+
+        .curtain-right {
+            border-left: 8px double #00F0F0;
+            filter: drop-shadow(-5px 0px 15px rgba(0, 240, 240, 0.5));
+        }
+
+        .curtains-open .curtain-left {
+            transform: translateX(-100%);
+        }
+
+        .curtains-open .curtain-right {
+            transform: translateX(100%);
+        }
+
+        /* Neon String Lights */
+        .lightrope {
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            position: absolute;
+            z-index: 10;
+            margin: -15px 0 0 0;
+            padding: 0;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .lightrope li {
+            position: relative;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 15px;
+            background: #FF007F;
+            box-shadow: 0px 4px 24px 3px rgba(255, 0, 127, 1);
+            animation-name: flash-pink;
+            animation-duration: 2s;
+        }
+
+        .lightrope li:nth-child(2n+1) {
+            background: #00F0F0;
+            box-shadow: 0px 4px 24px 3px rgba(0, 240, 240, 1);
+            animation-name: flash-cyan;
+            animation-duration: 1.5s;
+        }
+
+        .lightrope li:nth-child(3n+2) {
+            background: #FFD700;
+            box-shadow: 0px 4px 24px 3px rgba(255, 215, 0, 1);
+            animation-name: flash-gold;
+            animation-duration: 2.5s;
+        }
+
+        @keyframes flash-pink {
+            0%, 100% { background: #FF007F; box-shadow: 0px 2px 15px 2px rgba(255, 0, 127, 1); }
+            50% { background: rgba(255, 0, 127, 0.3); box-shadow: 0px 2px 5px 0px rgba(255, 0, 127, 0.1); }
+        }
+
+        @keyframes flash-cyan {
+            0%, 100% { background: #00F0F0; box-shadow: 0px 2px 15px 2px rgba(0, 240, 240, 1); }
+            50% { background: rgba(0, 240, 240, 0.3); box-shadow: 0px 2px 5px 0px rgba(0, 240, 240, 0.1); }
+        }
+
+        @keyframes flash-gold {
+            0%, 100% { background: #FFD700; box-shadow: 0px 2px 15px 2px rgba(255, 215, 0, 1); }
+            50% { background: rgba(255, 215, 0, 0.3); box-shadow: 0px 2px 5px 0px rgba(255, 215, 0, 0.1); }
+        }
+
+        /* Banner Bendera Segitiga (Bunting Flags - Neon Palette) */
+        .bunting-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            pointer-events: none;
+        }
+
+        .flag {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 35px solid #FF007F;
+            filter: drop-shadow(0px 4px 5px rgba(255,0,127,0.3));
+            transform-origin: top center;
+            animation: swing 3s ease-in-out infinite alternate;
+        }
+
+        .flag:nth-child(even) {
+            border-top-color: #00F0F0;
+            filter: drop-shadow(0px 4px 5px rgba(0,240,240,0.3));
+            animation-delay: -0.5s;
+        }
+
+        .flag:nth-child(3n) {
+            border-top-color: #FFD700;
+            filter: drop-shadow(0px 4px 5px rgba(255,215,0,0.3));
+            animation-delay: -1s;
+        }
+
+        @keyframes swing {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        /* Grid Cyber Retro */
+        .retro-grid {
+            background-color: #120224;
+            background-image: 
+                linear-gradient(rgba(186, 43, 226, 0.08) 1px, transparent 0),
+                linear-gradient(90deg, rgba(186, 43, 226, 0.08) 1px, transparent 0);
+            background-size: 30px 30px;
+        }
+
+        /* Desain Tiket Festival Neon */
+        .ticket {
+            background: #1A1371;
+            border: 4px solid #00F0F0;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 240, 240, 0.4), inset 0 0 15px rgba(0, 240, 240, 0.2);
+            position: relative;
+            padding: 24px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .ticket::before, .ticket::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            background: #120224;
+            border-radius: 50%;
+            border: 4px solid #00F0F0;
+            margin-top: -15px;
+            z-index: 2;
+        }
+
+        .ticket::before {
+            left: -19px;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            transform: rotate(45deg);
+        }
+
+        .ticket::after {
+            right: -19px;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            transform: rotate(45deg);
+        }
+
+        .ticket-dashed {
+            border-top: 3px dashed #FF007F;
+            height: 2px;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        /* Neon Glow Retro Button */
+        .btn-retro {
+            background: #FF007F;
+            color: #FAF6EE;
+            border: 3px solid #00F0F0;
+            box-shadow: 4px 4px 0px #BA2BE2;
+            text-shadow: 0 0 5px rgba(255,255,255,0.6);
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.1), box-shadow 0.2s ease, background-color 0.2s ease;
+            position: relative;
+            font-family: var(--font-righteous);
+        }
+
+        .btn-retro:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0px #00F0F0;
+            background-color: #ff1a8c;
+        }
+
+        .btn-retro:active {
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0px #00F0F0;
+        }
+
+        .btn-retro-gold {
+            background: #FFD700;
+            color: #120224;
+            border: 3px solid #FF007F;
+            box-shadow: 4px 4px 0px #00F0F0;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.1), box-shadow 0.2s ease, background-color 0.2s ease;
+            font-family: var(--font-righteous);
+        }
+
+        .btn-retro-gold:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0px #FF007F;
+        }
+
+        .btn-retro-gold:active {
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0px #FF007F;
+        }
+
+        /* Floating Vinyl Neon Player */
+        .vinyl-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 40;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s ease;
+        }
+
+        .vinyl-show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .vinyl {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #222 30%, #111 70%);
+            border-radius: 50%;
+            border: 3px solid #FF007F;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            animation: spin 3s linear infinite;
+            animation-play-state: paused;
+            transition: transform 0.3s ease;
+        }
+
+        .vinyl.playing {
+            animation-play-state: running;
+        }
+
+        .vinyl.playing-pulse {
+            animation: spin 3s linear infinite, pulse-beat 1.4s infinite ease-in-out;
+        }
+
+        @keyframes pulse-beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.12); box-shadow: 0 0 25px rgba(255, 0, 127, 0.9), 0 0 10px rgba(0, 240, 240, 0.6); }
+        }
+
+        .vinyl::after {
+            content: '';
+            width: 18px;
+            height: 18px;
+            background: #00F0F0;
+            border-radius: 50%;
+            border: 2px solid #120224;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Polaroid Cyber Style */
+        .polaroid {
+            background: #1A1371;
+            padding: 12px 12px 40px 12px;
+            border: 2px solid #FF007F;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            transform: rotate(-1.5deg);
+        }
+
+        .polaroid:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .polaroid:hover {
+            transform: scale(1.08) rotate(0deg) translateY(-12px);
+            box-shadow: 0 0 25px rgba(0, 240, 240, 0.8);
+            border-color: #00F0F0;
+            z-index: 20;
+        }
+
+        /* Cyberpunk Cards */
+        .retro-card {
+            border: 3px solid #BA2BE2;
+            background: #1A1371;
+            box-shadow: 6px 6px 0px #FF007F;
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
+        }
+
+        .retro-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #00F0F0;
+            box-shadow: 10px 10px 0px #00F0F0;
+        }
+
+        /* Timeline Event Style & Timeline Bullet Hover Wave */
+        .timeline-bullet {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .timeline-step:hover .timeline-bullet {
+            transform: scale(1.2) rotate(10deg);
+            background-color: #FF007F !important;
+            color: #FAF6EE !important;
+            box-shadow: 0 0 15px #FF007F;
+        }
+
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            left: 21px;
+            top: 40px;
+            bottom: -30px;
+            width: 4px;
+            background-color: #FF007F;
+            box-shadow: 0 0 8px #FF007F;
+            z-index: 0;
+        }
+
+        .timeline-step:last-child::before {
+            display: none;
+        }
+
+        /* Custom Modal Transition dengan Bounce-in */
+        .modal {
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-card {
+            transform: scale(0.8) rotate(-3deg);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 50px rgba(186, 43, 226, 0.6);
+        }
+
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal.open .modal-card {
+            transform: scale(1) rotate(0);
+        }
+
+        /* Logo Glow Container */
+        .logo-glow {
+            filter: drop-shadow(0 0 8px rgba(0, 240, 240, 0.6));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .logo-glow:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px rgba(255, 0, 127, 0.8));
+        }
+    </style>
+</head>
+<body class="retro-grid">
+
+    <!-- SUARA / MUSIK LATAR -->
+    <audio id="bg-audio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- FLOATING VINYL PLAYER -->
+    <div id="vinyl-music-container" class="vinyl-container">
+        <button onclick="toggleAudio()" class="focus:outline-none relative group" title="Putar Musik">
+            <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-deepPurple text-retroCream text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-cyanGlow">Musik Festival</span>
+            <div id="vinyl-disc" class="vinyl"></div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none text-cyanGlow text-xs font-bold font-display" id="music-indicator">
+                <i class="fa-solid fa-music animate-pulse"></i>
+            </div>
+        </button>
+    </div>
+
+    <!-- 1. OPENING UNDANGAN (Tirai Festival Interaktif) -->
+    <div id="curtain-overlay" class="fixed inset-0 flex overflow-hidden curtain-container">
+        <!-- Tirai Kiri -->
+        <div class="curtain-half curtain-left w-1/2 h-full absolute left-0 top-0 z-10 flex items-center justify-end pr-4">
+            <div class="h-full w-2 bg-neonPink opacity-50 mr-2"></div>
+        </div>
+        
+        <!-- Tiket di Tengah -->
+        <div id="welcome-ticket" class="absolute inset-0 m-auto flex items-center justify-center z-30 px-4">
+            <div class="ticket border-double border-8">
+                <!-- DUA LOGO SPACE DALAM TIKET -->
+                <div class="flex justify-center items-center gap-6 mb-4">
+                    <!-- EDIT: Ganti src dengan URL Logo 1 Anda -->
+                    <div class="w-16 h-16 rounded-full border-2 border-neonPink flex items-center justify-center bg-white text-neonPink text-xs font-bold logo-glow" title="Logo 1">
+                        <img src="LOGO FISIKA DASAR (2).png">
+                    </div>
+                    <!-- EDIT: Ganti src dengan URL Logo 2 Anda -->
+                    <div class="w-16 h-16 rounded-full border-2 border-cyanGlow flex items-center justify-center bg-retroCharcoal text-cyanGlow text-xs font-bold logo-glow" title="Logo 2">
+                        <i class="fa-solid fa-bolt text-lg"></i>
+                    </div>
+                </div>
+
+                <p class="font-righteous text-cyanGlow tracking-widest text-xs mb-1">ADMIT ONE • TICKET NO. 2026-F</p>
+                <div class="ticket-dashed"></div>
+                
+                <h3 class="font-righteous font-black text-3xl md:text-4xl text-festivalGold my-3 uppercase tracking-wide">
+                    FAREWELL PARTY
+                </h3>
+                <h2 class="text-neonPink text-4xl md:text-5xl my-2 font-righteous uppercase tracking-wider text-shadow">Regenerasi 2026</h2>
+                
+                <div class="ticket-dashed"></div>
+                <p class="text-xs text-gray-300 italic mb-6">"Let’s Celebrate the Memories and Rock the Future!"</p>
+                
+                <button onclick="openCurtains()" class="btn-retro w-full py-4 px-6 text-lg uppercase tracking-widest rounded-lg flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-ticket text-xl animate-bounce"></i> Ambil Tiket Anda!
+                </button>
+            </div>
+        </div>
+
+        <!-- Tirai Kanan -->
+        <div class="curtain-half curtain-right w-1/2 h-full absolute right-0 top-0 z-10 flex items-center justify-start pl-4">
+            <div class="h-full w-2 bg-cyanGlow opacity-50 ml-2"></div>
+        </div>
+    </div>
+
+
+    <!-- HALAMAN UTAMA (Tampil setelah tirai terbuka) -->
+    <div id="main-content" class="hidden opacity-0 transition-opacity duration-1000">
+
+        <!-- DEKORASI STRING LIGHTS -->
+        <ul class="lightrope">
+            <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        </ul>
+
+        <!-- DEKORASI BENDERA SEGITIGA -->
+        <div class="bunting-container">
+            <div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div>
+        </div>
+
+        <!-- 2. HEADER HERO SECTION -->
+        <header class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-20 overflow-hidden border-b-8 border-deepPurple">
+            <!-- Kanvas Efek Partikel/Kembang Api -->
+            <canvas id="fireworks-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+            <!-- Spotlight Beams Overlay -->
+            <div class="absolute inset-0 opacity-15 pointer-events-none z-0">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="spotlight" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FF007F" stop-opacity="0.5"/>
+                            <stop offset="100%" stop-color="transparent"/>
+                        </linearGradient>
+                    </defs>
+                    <polygon points="0,0 200,0 800,1000 0,1000" fill="url(#spotlight)"/>
+                    <polygon points="100%,0 100%,200 50%,1000 0,1000" fill="url(#spotlight)"/>
+                </svg>
+            </div>
+
+            <!-- TWO LOGO SPACE DI HERO SECTION (ASISTEN & JR ASISTEN) -->
+            <div class="relative z-20 flex justify-center items-center gap-8 mb-6 transition-all duration-700 ease-out transform translate-y-4 opacity-0" id="hero-logos">
+                <!-- EDIT: Ganti logo di bawah dengan URL gambar logo Anda asli -->
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-20 h-20 rounded-2xl border-2 border-neonPink flex items-center justify-center bg-deepPurple bg-white text-neonPink text-xl font-bold logo-glow shadow-[0_0_15px_#FF007F]">
+                        <img src="LOGO FISIKA DASAR (2).png"></i>
+                    </div>
+                </div>
+                
+                <div class="h-10 w-px bg-magicPurple"></div>
+
+                <!-- EDIT: Ganti logo di bawah dengan URL gambar logo Anda asli -->
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-20 h-20 rounded-2xl border-2 border-cyanGlow flex items-center justify-center bg-deepPurple bg-opacity-95 text-cyanGlow text-xl font-bold logo-glow shadow-[0_0_15px_#00F0F0]">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+                <!-- Badge Atas -->
+                <div class="border-double border-4 border-festivalGold p-2 inline-block mb-6 rounded-lg bg-deepPurple bg-opacity-90 transition-all duration-700 ease-out transform translate-y-4 opacity-0" id="hero-badge">
+                    <p class="text-xs md:text-sm tracking-widest text-cyanGlow font-bold font-righteous px-4 py-1 uppercase">REGENERASI 2026</p>
+                </div>
+
+                <!-- Judul Utama (Font: Monoton) -->
+                <h1 class="text-4xl sm:text-6xl md:text-8xl text-neonPink mb-4 tracking-tight drop-shadow-[0_4px_10px_rgba(255,0,127,0.7)] transition-all duration-1000 delay-200 ease-out transform translate-y-6 opacity-0 leading-none" id="hero-title" style="word-spacing: 15px;">
+                    🎭 FESTIVALA: THE GRAND FINALE & NEW BEGINNING 🎭
+                </h1>
+
+                <!-- Subjudul (Font: Righteous) -->
+                <p class="font-righteous text-3xl sm:text-4xl md:text-5xl text-festivalGold mb-6 -rotate-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)] filter hover:rotate-0 transition-all duration-1000 delay-400 ease-out transform translate-y-6 opacity-0 uppercase tracking-widest" id="hero-subtitle">
+                    Let’s Celebrate the Memories!
+                </p>
+
+                <!-- COUNTDOWN TIMER SECTION (Font: Bungee) -->
+                <div class="mb-8 p-6 bg-deepPurple bg-opacity-80 rounded-2xl border-2 border-cyanGlow shadow-[0_0_20px_rgba(0,240,240,0.3)] transition-all duration-1000 delay-500 ease-out transform translate-y-6 opacity-0" id="hero-countdown">
+                    <p class="text-xs font-righteous text-cyanGlow tracking-widest uppercase mb-3">Waktu Tersisa Menuju Gerbang Festival</p>
+                    <div class="grid grid-cols-4 gap-4 max-w-sm mx-auto font-bungee text-2xl md:text-3xl text-sunsetOrange">
+                        <div class="bg-retroCharcoal p-2 rounded-lg border border-neonPink">
+                            <span id="days">00</span>
+                            <div class="text-[9px] font-righteous text-gray-400 mt-1 uppercase tracking-wider">HARI</div>
+                        </div>
+                        <div class="bg-retroCharcoal p-2 rounded-lg border border-neonPink">
+                            <span id="hours">00</span>
+                            <div class="text-[9px] font-righteous text-gray-400 mt-1 uppercase tracking-wider">JAM</div>
+                        </div>
+                        <div class="bg-retroCharcoal p-2 rounded-lg border border-neonPink">
+                            <span id="minutes">00</span>
+                            <div class="text-[9px] font-righteous text-gray-400 mt-1 uppercase tracking-wider">MENIT</div>
+                        </div>
+                        <div class="bg-retroCharcoal p-2 rounded-lg border border-neonPink">
+                            <span id="seconds">00</span>
+                            <div class="text-[9px] font-righteous text-gray-400 mt-1 uppercase tracking-wider">DETIK</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deskripsi Singkat (Font: Poppins) -->
+                <p class="max-w-2xl text-gray-100 font-normal text-sm md:text-base leading-relaxed mb-8 bg-retroCharcoal bg-opacity-80 p-4 rounded-lg border border-magicPurple border-dashed transition-all duration-1000 delay-600 ease-out transform translate-y-6 opacity-0" id="hero-desc">
+                    Setiap momen hebat melahirkan kisah baru. Mari bergabung dalam malam penuh kehangatan, musik, tawa, dan kenangan indah saat kita menyambut babak baru generasi berikutnya.
+                </p>
+
+                <!-- Tombol Interaktif -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-700 ease-out transform translate-y-6 opacity-0" id="hero-btns">
+                    <a href="#details-section" class="btn-retro py-3 px-8 rounded-full text-sm uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-day"></i> Lihat Detail Acara
+                    </a>
+                    <button onclick="openTwibbonModal()" class="btn-retro-gold py-3 px-8 rounded-full text-sm uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-image"></i> Dapatkan Twibbon
+                    </button>
+                </div>
+            </div>
+
+            <!-- Panggung Festival Siluet Cyber di Bagian Bawah Hero -->
+            <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none opacity-40">
+                <svg viewBox="0 0 1440 200" fill="#1A1371" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                    <path d="M0,200 L1440,200 L1440,160 Q1300,180 1100,150 T700,170 T300,140 T0,180 Z" stroke="#00F0F0" stroke-width="2"/>
+                    <rect x="150" y="120" width="30" height="40" fill="#120224" stroke="#FF007F"/>
+                    <rect x="1200" y="130" width="40" height="30" fill="#120224" stroke="#FF007F"/>
+                    <circle cx="720" cy="160" r="15" fill="#120224" stroke="#00F0F0"/>
+                    <line x1="720" y1="160" x2="720" y2="100" stroke="#00F0F0" stroke-width="4"/>
+                </svg>
+            </div>
+        </header>
+
+
+        <!-- 3. DETAIL ACARA DENGAN IKON (Font Headings: Righteous) -->
+        <section id="details-section" class="py-20 px-4 max-w-6xl mx-auto relative z-20 overflow-hidden">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-black text-neonPink uppercase tracking-widest font-righteous">Informasi Festival</h2>
+                <div class="w-24 h-1 bg-cyanGlow mx-auto mt-2 shadow-[0_0_10px_#00F0F0]"></div>
+                <p class="text-sm italic text-gray-300 mt-2">Pastikan kehadiran Anda di malam bersejarah ini</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- KARTU 1: Waktu & Tanggal -->
+                <div class="retro-card p-8 rounded-xl flex flex-col justify-between items-center text-center reveal-on-scroll delay-100">
+                    <div class="w-16 h-16 bg-neonPink text-retroCream rounded-full flex items-center justify-center text-2xl mb-6 shadow-[0_0_15px_#FF007F] border-2 border-cyanGlow">
+                        <i class="fa-regular fa-calendar-check animate-pulse"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-righteous font-bold text-xl uppercase tracking-wider text-cyanGlow mb-3">Kapan Acara Dimulai?</h3>
+                        <!-- EDIT: Ubah Tanggal Sesuai Kebutuhan -->
+                        <p class="font-bold text-lg text-white mb-1">Sabtu, 15 Agustus 2026</p>
+                        <!-- EDIT: Ubah Jam Sesuai Kebutuhan -->
+                        <p class="text-sm text-gray-300">18:30 WIB - Selesai</p>
+                        <p class="text-xs text-festivalGold font-bold mt-2 italic">Gerbang Utama Dibuka: 18:00 WIB</p>
+                    </div>
+                    <div class="mt-6 w-full h-1 bg-cyanGlow opacity-30"></div>
+                </div>
+
+                <!-- KARTU 2: Lokasi Acara -->
+                <div class="retro-card p-8 rounded-xl flex flex-col justify-between items-center text-center reveal-on-scroll delay-200">
+                    <div class="w-16 h-16 bg-deepPurple text-cyanGlow rounded-full flex items-center justify-center text-2xl mb-6 shadow-[0_0_15px_#00F0F0] border-2 border-neonPink">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-righteous font-bold text-xl uppercase tracking-wider text-neonPink mb-3">Dimana Tempatnya?</h3>
+                        <!-- EDIT: Ubah Nama Tempat Sesuai Kebutuhan -->
+                        <p class="font-bold text-lg text-white mb-1">Retro Garden & Stage Pavilion</p>
+                        <!-- EDIT: Ubah Alamat Lengkap Sesuai Kebutuhan -->
+                        <p class="text-sm text-gray-300">Jl. Vintage Raya No. 45, Kebayoran, Jakarta</p>
+                    </div>
+                    <!-- EDIT: Ganti tautan link Google Maps di bawah (href) sesuai lokasi asli -->
+                    <a href="https://maps.google.com" target="_blank" class="btn-retro w-full mt-6 py-2 px-4 rounded text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-location-arrow animate-bounce"></i> Lihat Di Maps
+                    </a>
+                </div>
+
+                <!-- KARTU 3: Dress Code -->
+                <div class="retro-card p-8 rounded-xl flex flex-col justify-between items-center text-center reveal-on-scroll delay-300">
+                    <div class="w-16 h-16 bg-festivalGold text-retroCharcoal rounded-full flex items-center justify-center text-2xl mb-6 shadow-[0_0_15px_#FFD700] border-2 border-neonPink">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-righteous font-bold text-xl uppercase tracking-wider text-festivalGold mb-3">Apa Busana Anda?</h3>
+                        <!-- EDIT: Ubah Aturan Dress Code Sesuai Kebutuhan -->
+                        <p class="font-bold text-lg text-neonPink mb-1">Festival Vibes: Bright & Bold</p>
+                        <p class="text-sm text-gray-300">Gunakan pakaian bertema festival retro dengan sentuhan warna yang cerah dan berani (Deep Purple, Neon Pink, atau Sunset Orange!).</p>
+                    </div>
+                    <div class="mt-6 w-full h-1 bg-neonPink opacity-30"></div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 4. RANGKAIAN ACARA (TIMELINE RETRO DENGAN TRANSISI SLIDE-UP) -->
+        <section class="py-20 bg-retroCharcoal text-retroCream relative border-t-8 border-b-8 border-deepPurple overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <span class="text-cyanGlow font-righteous text-lg tracking-widest uppercase block mb-2">RUN DOWN</span>
+                    <h2 class="text-4xl md:text-5xl font-black uppercase text-white font-righteous">Agenda Festival</h2>
+                    <div class="w-24 h-1 bg-neonPink mx-auto mt-2 shadow-[0_0_10px_#FF007F]"></div>
+                </div>
+
+                <div class="relative pl-6 md:pl-12 space-y-12">
+                    
+                    <!-- EDIT: Ubah Agenda Acara di Bawah Sesuai Kebutuhan -->
+                    
+                    <!-- Sesi 1 -->
+                    <div class="timeline-step relative pl-10 reveal-on-scroll">
+                        <div class="timeline-bullet absolute left-0 top-0 w-11 h-11 bg-neonPink rounded-full border-2 border-cyanGlow flex items-center justify-center text-white z-10 shadow-md">
+                            <i class="fa-solid fa-door-open"></i>
+                        </div>
+                        <div class="bg-deepPurple text-white p-6 rounded-lg border-2 border-magicPurple shadow-lg transition-all duration-300 hover:scale-[1.01] hover:border-cyanGlow">
+                            <span class="text-xs font-bold text-cyanGlow font-righteous">18.00 - 18.30 WIB</span>
+                            <h4 class="font-righteous font-bold text-lg md:text-xl uppercase my-1 text-festivalGold">Gerbang Utama & Registrasi</h4>
+                            <p class="text-sm text-gray-300">Pintu masuk dibuka! Pengunjung dipersilakan melakukan registrasi dan mendapatkan neon stick pembuka.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sesi 2 -->
+                    <div class="timeline-step relative pl-10 reveal-on-scroll">
+                        <div class="timeline-bullet absolute left-0 top-0 w-11 h-11 bg-midnightBlue rounded-full border-2 border-neonPink flex items-center justify-center text-white z-10 shadow-md">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </div>
+                        <div class="bg-deepPurple text-white p-6 rounded-lg border-2 border-magicPurple shadow-lg transition-all duration-300 hover:scale-[1.01] hover:border-cyanGlow">
+                            <span class="text-xs font-bold text-neonPink font-righteous">18.30 - 19.15 WIB</span>
+                            <h4 class="font-righteous font-bold text-lg md:text-xl uppercase my-1 text-festivalGold">Sambutan & Pembukaan Hangat</h4>
+                            <p class="text-sm text-gray-300">Pembukaan resmi oleh MC legendaris, kilas balik pencapaian kepengurusan, dan sambutan hangat para ketua.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sesi 3 -->
+                    <div class="timeline-step relative pl-10 reveal-on-scroll">
+                        <div class="timeline-bullet absolute left-0 top-0 w-11 h-11 bg-festivalGold rounded-full border-2 border-deepPurple flex items-center justify-center text-retroCharcoal z-10 shadow-md">
+                            <i class="fa-solid fa-photo-film"></i>
+                        </div>
+                        <div class="bg-deepPurple text-white p-6 rounded-lg border-2 border-magicPurple shadow-lg transition-all duration-300 hover:scale-[1.01] hover:border-cyanGlow">
+                            <span class="text-xs font-bold text-sunsetOrange font-righteous">19.15 - 20.00 WIB</span>
+                            <h4 class="font-righteous font-bold text-lg md:text-xl uppercase my-1 text-festivalGold">Memory Lane & Retro Slide</h4>
+                            <p class="text-sm text-gray-300">Sesi bernostalgia menyaksikan rangkuman foto/video terlucu, terharu, dan terbaik selama setahun perjalanan.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sesi 4 -->
+                    <div class="timeline-step relative pl-10 reveal-on-scroll">
+                        <div class="timeline-bullet absolute left-0 top-0 w-11 h-11 bg-neonPink rounded-full border-2 border-cyanGlow flex items-center justify-center text-white z-10 shadow-md">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div class="bg-deepPurple text-white p-6 rounded-lg border-2 border-magicPurple shadow-lg transition-all duration-300 hover:scale-[1.01] hover:border-cyanGlow">
+                            <span class="text-xs font-bold text-cyanGlow font-righteous">20.00 - 21.00 WIB</span>
+                            <h4 class="font-righteous font-bold text-lg md:text-xl uppercase my-1 text-festivalGold">Prosesi Regenerasi & Penghargaan</h4>
+                            <p class="text-sm text-gray-300">Prosesi serah terima jabatan secara simbolis, dilanjutkan dengan penganugerahan nominasi asisten ter-favorit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sesi 5 -->
+                    <div class="timeline-step relative pl-10 reveal-on-scroll">
+                        <div class="timeline-bullet absolute left-0 top-0 w-11 h-11 bg-midnightBlue rounded-full border-2 border-neonPink flex items-center justify-center text-white z-10 shadow-md">
+                            <i class="fa-solid fa-guitar"></i>
+                        </div>
+                        <div class="bg-deepPurple text-white p-6 rounded-lg border-2 border-magicPurple shadow-lg transition-all duration-300 hover:scale-[1.01] hover:border-cyanGlow">
+                            <span class="text-xs font-bold text-neonPink font-righteous">21.00 - Selesai</span>
+                            <h4 class="font-righteous font-bold text-lg md:text-xl uppercase my-1 text-festivalGold">Makan Malam & Acoustic Fest</h4>
+                            <p class="text-sm text-gray-300">Pesta makan malam santai diiringi penampilan live akustik, sesi foto bersama, kembang api mini, dan penutupan.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. TOMBOL INTERAKTIF: TWIBBON GENERATOR -->
+        <section class="py-20 px-4 text-center max-w-4xl mx-auto reveal-on-scroll">
+            <div class="retro-card bg-gradient-to-br from-deepPurple to-midnightBlue p-8 md:p-12 rounded-2xl border-double border-8 border-cyanGlow shadow-[0_0_20px_rgba(0,240,240,0.4)]">
+                <h3 class="font-righteous text-2xl md:text-3xl text-festivalGold mb-2 uppercase tracking-widest animate-pulse">Ayo Meriahkan!</h3>
+                <h2 class="font-righteous font-black text-3xl md:text-4xl text-neonPink mb-6 uppercase">Unduh Twibbon Resmi</h2>
+                <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto">
+                    Ayo tunjukkan dukunganmu dengan memasang Twibbon resmi dan membagikannya di media sosial favoritmu sebelum acara dimulai!
+                </p>
+                <button onclick="openTwibbonModal()" class="btn-retro py-4 px-10 rounded-full text-base uppercase tracking-widest flex items-center justify-center gap-3 mx-auto shadow-[0_0_15px_#FF007F]">
+                    <i class="fa-solid fa-download text-lg animate-bounce"></i> Ambil Twibbon Anda
+                </button>
+            </div>
+        </section>
+
+
+        <!-- 6. GALERI / KENANGAN (POLAROID PHOTOS GRID) -->
+        <section class="py-20 bg-retroCharcoal border-t-4 border-deepPurple overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-black text-white uppercase font-righteous">Lembaran Kenangan</h2>
+                    <div class="w-24 h-1 bg-neonPink mx-auto mt-2 shadow-[0_0_10px_#FF007F]"></div>
+                    <p class="text-sm italic text-gray-300 mt-2">Sebuah perjalanan yang terekam selamanya dalam foto</p>
+                </div>
+
+                <!-- Grid Polaroid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Polaroid 1 -->
+                    <div class="polaroid reveal-on-scroll delay-100">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                            <img src="https://picsum.photos/id/1012/600/450" alt="Kebersamaan" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
+                            <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Awal Perjuangan</p>
+                            </div>
+                        </div>
+                        <p class="font-righteous text-xl text-center text-white mt-4 mb-2">Hari Pertama Kumpul</p>
+                    </div>
+
+                    <!-- Polaroid 2 -->
+                    <div class="polaroid reveal-on-scroll delay-200">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                            <img src="https://picsum.photos/id/1033/600/450" alt="Rapat Project" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
+                            <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Malam Kreatif</p>
+                            </div>
+                        </div>
+                        <p class="font-righteous text-xl text-center text-white mt-4 mb-2">Kerja Lembur Kreatif</p>
+                    </div>
+
+                    <!-- Polaroid 3 -->
+                    <div class="polaroid reveal-on-scroll delay-300">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                            <img src="https://picsum.photos/id/1059/600/450" alt="Event Besar" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
+                            <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Hari Kebahagiaan</p>
+                            </div>
+                        </div>
+                        <p class="font-righteous text-xl text-center text-white mt-4 mb-2">Festival Raya 2025</p>
+                    </div>
+
+                    <!-- Polaroid 4 -->
+                    <div class="polaroid reveal-on-scroll delay-100">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                            <img src="https://picsum.photos/id/1062/600/450" alt="Tawa Bersama" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
+                            <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Senyum Abadi</p>
+                            </div>
+                        </div>
+                        <p class="font-righteous text-xl text-center text-white mt-4 mb-2">Canda Tawa Hangat</p>
+                    </div>
+
+                    <!-- Polaroid 5 -->
+                    <div class="polaroid reveal-on-scroll delay-200">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                            <img src="https://picsum.photos/id/1074/600/450" alt="Outing Bersama" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
+                            <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Puncak Petualangan</p>
+                            </div>
+                        </div>
+                        <p class="font-righteous text-xl text-center text-white mt-4 mb-2">Liburan Di Bukit</p>
+                    </div>
+
+                    <!-- Polaroid 6 -->
+                    <div class="polaroid reveal-on-scroll delay-300">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                            <img src="https://picsum.photos/id/1084/600/450" alt="Rencana Masa Depan" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
+                            <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Gerbang Regenerasi</p>
+                            </div>
+                        </div>
+                        <p class="font-righteous text-xl text-center text-white mt-4 mb-2">Merajut Langkah Baru</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 8. FOOTER DENGAN TOMBOL RSVP -->
+        <footer class="bg-deepPurple text-retroCream pt-20 pb-10 border-t-8 border-cyanGlow relative overflow-hidden">
+            <!-- Decorative Sunburst background in footer -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none z-0">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,50 L0,0 M50,50 L10,0 M50,50 L20,0 M50,50 L30,0 M50,50 L40,0 M50,50 L50,0 M50,50 L60,0 M50,50 L70,0 M50,50 L80,0 M50,50 L90,0 M50,50 L100,0 M50,50 L100,10 M50,50 L100,20 M50,50 L100,30 M50,50 L100,40 M50,50 L100,50 M50,50 L100,60 M50,50 L100,70 M50,50 L100,80 M50,50 L100,90 M50,50 L100,100 M50,50 L90,100 M50,50 L80,100 M50,50 L70,100 M50,50 L60,100 M50,50 L50,100 M50,50 L40,100 M50,50 L30,100 M50,50 L20,100 M50,50 L10,100 M50,50 L0,100 M50,50 L0,90 M50,50 L0,80 M50,50 L0,70 M50,50 L0,60 M50,50 L0,50 M50,50 L0,40 M50,50 L0,30 M50,50 L0,20 M50,50 L0,10" stroke="#00F0F0" stroke-width="0.3"/>
+                </svg>
+            </div>
+
+            <div class="relative z-10 max-w-4xl mx-auto text-center px-4">
+                <div class="reveal-on-scroll">
+                    <h3 class="font-righteous text-xl md:text-2xl text-festivalGold mb-4 tracking-widest uppercase">Pintu Registrasi Kehadiran</h3>
+                    <h2 class="text-4xl md:text-5xl font-black font-righteous uppercase tracking-wide mb-6">Konfirmasi Kehadiran Anda</h2>
+                    <p class="max-w-xl mx-auto text-sm text-gray-200 leading-relaxed mb-10">
+                        Bantu kami menyiapkan tempat terbaik dengan mengonfirmasi kehadiran Anda pada formulir RSVP di bawah ini sebelum tanggal <strong class="text-neonPink">10 Agustus 2026</strong>.
+                    </p>
+                </div>
+
+                <!-- EDIT: Ganti link href di bawah dengan formulir RSVP asli Anda (misal Google Form) -->
+                <a href="https://forms.google.com" target="_blank" class="btn-retro-gold inline-flex items-center gap-3 py-4 px-10 rounded-full text-base uppercase tracking-widest mb-16 reveal-on-scroll delay-100 shadow-[0_0_15px_#FFD700]">
+                    <i class="fa-solid fa-file-signature text-xl"></i> Isi Form Kehadiran (RSVP)
+                </a>
+
+                <!-- Ucapan Penutup -->
+                <p class="font-righteous text-4xl md:text-6xl text-neonPink mb-4 transform -rotate-1 reveal-on-scroll delay-200 tracking-wider">
+                    SEE YOU THERE!
+                </p>
+                <div class="w-32 h-1 bg-cyanGlow mx-auto my-6 reveal-on-scroll shadow-[0_0_8px_#00F0F0]"></div>
+
+                <!-- SOSIAL MEDIA -->
+                <div class="flex justify-center gap-6 mb-12 reveal-on-scroll">
+                    <a href="#" class="w-12 h-12 rounded-full border-2 border-neonPink flex items-center justify-center text-neonPink hover:bg-neonPink hover:text-white transition-all duration-300 text-lg hover:-translate-y-1 hover:shadow-[0_0_15px_#FF007F]" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border-2 border-cyanGlow flex items-center justify-center text-cyanGlow hover:bg-cyanGlow hover:text-retroCharcoal transition-all duration-300 text-lg hover:-translate-y-1 hover:shadow-[0_0_15px_#00F0F0]" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border-2 border-festivalGold flex items-center justify-center text-festivalGold hover:bg-festivalGold hover:text-retroCharcoal transition-all duration-300 text-lg hover:-translate-y-1 hover:shadow-[0_0_15px_#FFD700]" title="Situs Utama">
+                        <i class="fa-solid fa-globe"></i>
+                    </a>
+                </div>
+
+                <p class="text-xs text-gray-400 reveal-on-scroll">
+                    &copy; 2026 Regenerasi Farewell Committee. All Rights Reserved.<br>
+                    Crafted with Love, Nostalgia, and Neon Retro Vibes.
+                </p>
+            </div>
+        </footer>
+
+    </div> <!-- AKHIR DARI HALAMAN UTAMA -->
+
+
+    <!-- 7. MODAL DOWNLOAD TWIBBON -->
+    <div id="twibbon-modal" class="fixed inset-0 bg-black bg-opacity-85 flex items-center justify-center p-4 z-50 opacity-0 invisible modal">
+        <div class="bg-deepPurple rounded-2xl border-4 border-cyanGlow w-full max-w-2xl overflow-hidden modal-card flex flex-col shadow-2xl relative text-white">
+            
+            <!-- Tombol Close Modal -->
+            <button onclick="closeTwibbonModal()" class="absolute top-4 right-4 text-cyanGlow hover:text-neonPink text-2xl transition-all duration-300 hover:rotate-90 z-10" title="Tutup">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+
+            <!-- Judul Modal -->
+            <div class="bg-retroCharcoal p-6 text-center border-b-4 border-neonPink">
+                <h3 class="font-righteous text-festivalGold text-sm tracking-widest uppercase mb-1">CHOOSE YOUR IDENTITY</h3>
+                <h2 class="text-2xl md:text-3xl font-righteous font-bold uppercase">UNDUH TWIBBON FESTIVAL</h2>
+            </div>
+
+            <!-- Konten Pilihan Twibbon -->
+            <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 bg-deepPurple">
+                
+                <!-- Twibbon Kartu 1: Asisten -->
+                <div class="border-2 border-magicPurple p-4 rounded-xl bg-retroCharcoal text-center flex flex-col justify-between items-center shadow-md transition-transform duration-300 hover:scale-[1.03] hover:border-neonPink">
+                    <!-- Ilustrasi Frame Twibbon -->
+                    <div class="relative w-36 h-36 border-4 border-neonPink rounded-lg overflow-hidden bg-midnightBlue flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(255,0,127,0.3)]">
+                        <div class="absolute inset-2 border border-dashed border-cyanGlow flex items-center justify-center">
+                            <i class="fa-solid fa-user-tie text-5xl text-neonPink text-opacity-30"></i>
+                        </div>
+                        <div class="absolute bottom-0 inset-x-0 bg-neonPink py-1 text-[10px] text-white font-righteous tracking-widest font-bold uppercase text-center">SENIOR ASISTEN</div>
+                    </div>
+                    <h4 class="font-righteous font-bold text-lg text-white mb-2">Twibbon Senior Asisten</h4>
+                    <p class="text-xs text-gray-300 mb-4">Didesain khusus untuk jajaran senior asisten 2024.</p>
+                    
+                    <button id="btn-dl-asisten" onclick="simulateDownload('Asisten')" class="btn-retro w-full py-2 text-xs uppercase tracking-wider rounded-md overflow-hidden relative">
+                        <span class="btn-text flex items-center justify-center gap-1"><i class="fa-solid fa-download"></i> Download Twibbon</span>
+                        <span class="absolute inset-0 bg-cyanGlow opacity-30 pointer-events-none transform -translate-x-full transition-transform duration-[2000ms]" id="loader-asisten"></span>
+                    </button>
+                </div>
+
+                <!-- Twibbon Kartu 2: Junior Asisten -->
+                <div class="border-2 border-magicPurple p-4 rounded-xl bg-retroCharcoal text-center flex flex-col justify-between items-center shadow-md transition-transform duration-300 hover:scale-[1.03] hover:border-cyanGlow">
+                    <!-- Ilustrasi Frame Twibbon -->
+                    <div class="relative w-36 h-36 border-4 border-cyanGlow rounded-lg overflow-hidden bg-midnightBlue flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(0,240,240,0.3)]">
+                        <div class="absolute inset-2 border border-dashed border-neonPink flex items-center justify-center">
+                            <i class="fa-solid fa-user text-5xl text-cyanGlow text-opacity-30"></i>
+                        </div>
+                        <div class="absolute bottom-0 inset-x-0 bg-cyanGlow py-1 text-[9px] text-retroCharcoal font-righteous tracking-widest font-bold uppercase text-center">JUNIOR ASISTEN</div>
+                    </div>
+                    <h4 class="font-righteous font-bold text-lg text-white mb-2">Twibbon Junior Asisten</h4>
+                    <p class="text-xs text-gray-300 mb-4">Didesain khusus untuk junior asisten 2025.</p>
+                    
+                    <button id="btn-dl-junior" onclick="simulateDownload('Junior Asisten')" class="btn-retro-gold w-full py-2 text-xs uppercase tracking-wider rounded-md overflow-hidden relative">
+                        <span class="btn-text flex items-center justify-center gap-1"><i class="fa-solid fa-download"></i> Download Twibbon</span>
+                        <span class="absolute inset-0 bg-neonPink opacity-30 pointer-events-none transform -translate-x-full transition-transform duration-[2000ms]" id="loader-junior"></span>
+                    </button>
+                </div>
+
+            </div>
+            
+            <!-- Footer Modal -->
+            <div class="bg-retroCharcoal p-4 text-center border-t border-magicPurple">
+                <p class="text-xs text-gray-400 italic">Jangan lupa dipost yaaakk!! 📸 🤳</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 8. ANIMATED SUCCESS POPUP / VALIDASI DOWNLOAD -->
+    <div id="success-popup" class="fixed inset-0 flex items-center justify-center p-4 z-50 opacity-0 invisible modal">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black bg-opacity-80"></div>
+        
+        <!-- Kotak Popup -->
+        <div class="bg-deepPurple border-double border-8 border-cyanGlow rounded-2xl w-full max-w-sm p-8 text-center relative z-10 modal-card shadow-2xl">
+            <!-- Icon Bintang Animasi -->
+            <div class="w-20 h-20 bg-cyanGlow text-retroCharcoal rounded-full flex items-center justify-center text-4xl mx-auto mb-6 border-4 border-neonPink animate-bounce shadow-[0_0_15px_#00F0F0]">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            
+            <h3 class="font-righteous font-black text-2xl text-white mb-2 uppercase">BERHASIL DIUNDUH!</h3>
+            <p id="success-message" class="text-sm text-gray-300 leading-relaxed mb-6">
+                Twibbon Anda berhasil disimpan secara otomatis.
+            </p>
+            
+            <button onclick="closeSuccessPopup()" class="btn-retro w-full py-2 text-sm uppercase tracking-widest rounded-lg">
+                Sip, Mantap!
+            </button>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Inisialisasi Kontrol Musik Latar
+        const bgAudio = document.getElementById('bg-audio');
+        const vinylDisc = document.getElementById('vinyl-disc');
+        const musicIndicator = document.getElementById('music-indicator');
+        const vinylContainer = document.getElementById('vinyl-music-container');
+        let isPlaying = false;
+
+        // 1. Fungsi Membuka Tirai Festival
+        function openCurtains() {
+            // Putar audio saat tirai diklik
+            playAudio();
+
+            // Animasi transisi elemen tiket di tengah
+            const ticket = document.getElementById('welcome-ticket');
+            ticket.style.transform = 'scale(0.5) rotate(-15deg)';
+            ticket.style.opacity = '0';
+
+            // Tambahkan kelas untuk membuka tirai
+            document.getElementById('curtain-overlay').classList.add('curtains-open');
+            
+            // Tampilkan konten utama dengan animasi fade-in setelah tirai mulai terbuka
+            const mainContent = document.getElementById('main-content');
+            mainContent.classList.remove('hidden');
+            setTimeout(() => {
+                mainContent.classList.remove('opacity-0');
+                mainContent.classList.add('opacity-100');
+                
+                // Triger animasi masuk Hero Section secara bertahap
+                triggerHeroAnimations();
+
+                // Hapus overlay tirai dari DOM setelah transisi selesai
+                setTimeout(() => {
+                    document.getElementById('curtain-overlay').style.display = 'none';
+                    // Tampilkan floating music button dengan transisi slide up
+                    vinylContainer.classList.add('vinyl-show');
+                    // Mulai efek animasi kembang api setelah tirai terbuka sempurna
+                    startFireworks();
+                    // Inisialisasi Detektor Scroll (Intersection Observer)
+                    initScrollReveal();
+                    // Inisialisasi Hitung Mundur / Countdown
+                    startCountdown();
+                }, 1500);
+            }, 300);
+        }
+
+        // 2. Animasi Bertahap Masuk Hero Section
+        function triggerHeroAnimations() {
+            const logos = document.getElementById('hero-logos');
+            const badge = document.getElementById('hero-badge');
+            const title = document.getElementById('hero-title');
+            const subtitle = document.getElementById('hero-subtitle');
+            const countdown = document.getElementById('hero-countdown');
+            const desc = document.getElementById('hero-desc');
+            const btns = document.getElementById('hero-btns');
+
+            setTimeout(() => { logos.classList.remove('opacity-0', 'translate-y-4'); logos.classList.add('opacity-100', 'translate-y-0'); }, 100);
+            setTimeout(() => { badge.classList.remove('opacity-0', 'translate-y-4'); badge.classList.add('opacity-100', 'translate-y-0'); }, 250);
+            setTimeout(() => { title.classList.remove('opacity-0', 'translate-y-6'); title.classList.add('opacity-100', 'translate-y-0'); }, 400);
+            setTimeout(() => { subtitle.classList.remove('opacity-0', 'translate-y-6'); subtitle.classList.add('opacity-100', 'translate-y-0'); }, 550);
+            setTimeout(() => { countdown.classList.remove('opacity-0', 'translate-y-6'); countdown.classList.add('opacity-100', 'translate-y-0'); }, 700);
+            setTimeout(() => { desc.classList.remove('opacity-0', 'translate-y-6'); desc.classList.add('opacity-100', 'translate-y-0'); }, 850);
+            setTimeout(() => { btns.classList.remove('opacity-0', 'translate-y-6'); btns.classList.add('opacity-100', 'translate-y-0'); }, 1000);
+        }
+
+        // 3. Detektor Scroll untuk Elemen Halaman
+        function initScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal-on-scroll');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-active');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(reveal => {
+                observer.observe(reveal);
+            });
+        }
+
+        // 4. Countdown Timer Logic (Bungee font)
+        function startCountdown() {
+            // EDIT: Tanggal target hitung mundur (Format: YYYY-MM-DDTHH:MM:SS)
+            const targetDate = new Date("2026-08-15T18:30:00").getTime();
+
+            const timerInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference <= 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById("days").innerText = "00";
+                    document.getElementById("hours").innerText = "00";
+                    document.getElementById("minutes").innerText = "00";
+                    document.getElementById("seconds").innerText = "00";
+                    return;
+                }
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+            }, 1000);
+        }
+
+        // 5. Fungsi Musik / Kontrol Audio
+        function playAudio() {
+            bgAudio.volume = 0.5; 
+            bgAudio.play().then(() => {
+                isPlaying = true;
+                vinylDisc.classList.add('playing', 'playing-pulse');
+                musicIndicator.innerHTML = '<i class="fa-solid fa-pause"></i>';
+            }).catch(e => {
+                console.log("Audio autoplay dicegah.");
+            });
+        }
+
+        function toggleAudio() {
+            if (isPlaying) {
+                bgAudio.pause();
+                isPlaying = false;
+                vinylDisc.classList.remove('playing', 'playing-pulse');
+                musicIndicator.innerHTML = '<i class="fa-solid fa-play"></i>';
+            } else {
+                playAudio();
+            }
+        }
+
+        // 6. Kontrol Modal Twibbon
+        function openTwibbonModal() {
+            const modal = document.getElementById('twibbon-modal');
+            modal.classList.add('open');
+        }
+
+        function closeTwibbonModal() {
+            const modal = document.getElementById('twibbon-modal');
+            modal.classList.remove('open');
+        }
+
+        // 7. Unduh Twibbon riil dengan Canvas
+        function simulateDownload(twibbonType) {
+            const loaderId = twibbonType === 'Asisten' ? 'loader-asisten' : 'loader-junior';
+            const btnId = twibbonType === 'Asisten' ? 'btn-dl-asisten' : 'btn-dl-junior';
+            
+            const loader = document.getElementById(loaderId);
+            const btn = document.getElementById(btnId);
+
+            btn.style.pointerEvents = 'none';
+            loader.style.transform = 'translateX(0)';
+
+            // Setelah transisi loading selesai (2 detik), generate PNG
+            setTimeout(() => {
+                closeTwibbonModal();
+                
+                const canvas = document.createElement('canvas');
+                canvas.width = 800;
+                canvas.height = 800;
+                const ctx = canvas.getContext('2d');
+
+                // Latar belakang gradasi neon
+                const grad = ctx.createLinearGradient(0, 0, 800, 800);
+                grad.addColorStop(0, '#2E0854');
+                grad.addColorStop(1, '#1A1371');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, 800, 800);
+
+                // Frame transparan di tengah
+                ctx.clearRect(120, 120, 560, 480);
+                ctx.lineWidth = 15;
+                ctx.strokeStyle = twibbonType === 'Asisten' ? '#FF007F' : '#00F0F0';
+                ctx.strokeRect(120, 120, 560, 480);
+
+                // Judul
+                ctx.fillStyle = '#FFD700';
+                ctx.font = 'bold 36px Courier New';
+                ctx.textAlign = 'center';
+                ctx.fillText('REGENERASI 2026', 400, 680);
+                
+                ctx.fillStyle = '#00F0F0';
+                ctx.font = 'italic 24px Georgia';
+                ctx.fillText('Let\'s Celebrate the Memories!', 400, 725);
+
+                ctx.fillStyle = twibbonType === 'Asisten' ? '#FF007F' : '#00F0F0';
+                ctx.fillRect(250, 40, 300, 50);
+                ctx.fillStyle = '#120224';
+                ctx.font = 'bold 24px Arial';
+                ctx.fillText(twibbonType.toUpperCase(), 400, 75);
+
+                const imageURL = canvas.toDataURL("image/png");
+                const link = document.createElement('a');
+                link.download = `Twibbon_${twibbonType.replace(/\s+/g, '_')}_Regenerasi2026.png`;
+                link.href = imageURL;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Tampilkan sukses popup
+                setTimeout(() => {
+                    const messageElement = document.getElementById('success-message');
+                    messageElement.innerHTML = `Twibbon resmi <strong>${twibbonType}</strong> berhasil diunduh secara instan! Silakan pasang foto terbaik Anda menggunakan aplikasi edit foto pilihan Anda.`;
+                    
+                    const successPopup = document.getElementById('success-popup');
+                    successPopup.classList.add('open');
+
+                    // Reset Tombol & Loader
+                    setTimeout(() => {
+                        btn.style.pointerEvents = 'auto';
+                        loader.style.transition = 'none';
+                        loader.style.transform = 'translateX(-100%)';
+                        setTimeout(() => {
+                            loader.style.transition = 'transform 2s cubic-bezier(0.1, 0.8, 0.2, 1)';
+                        }, 50);
+                    }, 500);
+                }, 400);
+
+            }, 2000);
+        }
+
+        function closeSuccessPopup() {
+            document.getElementById('success-popup').classList.remove('open');
+        }
+
+        // 8. Efek Animasi Kembang Api / Partikel Canvas (Performa Tinggi)
+        let fireworksActive = false;
+        function startFireworks() {
+            const canvas = document.getElementById('fireworks-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            const particles = [];
+            fireworksActive = true;
+
+            class Particle {
+                constructor(x, y, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.color = color;
+                    this.radius = Math.random() * 3 + 1;
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 6 + 2;
+                    this.dx = Math.cos(angle) * velocity;
+                    this.dy = Math.sin(angle) * velocity;
+                    this.alpha = 1;
+                    this.decay = Math.random() * 0.02 + 0.015;
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                    ctx.restore();
+                }
+
+                update() {
+                    this.x += this.dx;
+                    this.y += this.dy;
+                    this.dy += 0.04; // Gravitas ringan
+                    this.alpha -= this.decay;
+                }
+            }
+
+            const colors = ['#2E0854', '#1A1371', '#00F0F0', '#FF007F', '#FFD700', '#FF5722'];
+
+            function launchFirework() {
+                const targetX = Math.random() * width;
+                const targetY = Math.random() * (height * 0.5) + 50;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                for (let i = 0; i < 40; i++) {
+                    particles.push(new Particle(targetX, targetY, color));
+                }
+            }
+
+            let lastLaunch = 0;
+            function animateLoop(now) {
+                if (!fireworksActive) return;
+                requestAnimationFrame(animateLoop);
+
+                ctx.clearRect(0, 0, width, height);
+
+                if (now - lastLaunch > 1800) {
+                    launchFirework();
+                    lastLaunch = now;
+                }
+
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    p.update();
+                    p.draw();
+                    if (p.alpha <= 0) {
+                        particles.splice(i, 1);
+                    }
+                }
+            }
+            
+            requestAnimationFrame(animateLoop);
+        }
+    </script>
+</body>
+</html>
