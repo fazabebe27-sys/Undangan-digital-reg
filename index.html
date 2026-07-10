@@ -381,12 +381,19 @@
         /* Polaroid Cyber Style */
         .polaroid {
             background: #1A1371;
-            padding: 12px 12px 40px 12px;
+            padding: 8px 8px 16px 8px; /* Memperkecil space kosong di mobile */
             border: 2px solid #FF007F;
             box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
             transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
             transform: rotate(-1.5deg);
         }
+
+/* Kembalikan space besar hanya saat dibuka di desktop/layar lebar */
+@media (min-width: 640px) {
+    .polaroid {
+        padding: 12px 12px 40px 12px;
+    }
+}
 
         .polaroid:nth-child(even) {
             transform: rotate(2deg);
@@ -799,9 +806,9 @@
         <section class="py-20 px-4 text-center max-w-4xl mx-auto reveal-on-scroll">
             <div class="retro-card bg-gradient-to-br from-deepPurple to-midnightBlue p-8 md:p-12 rounded-2xl border-double border-8 border-cyanGlow shadow-[0_0_20px_rgba(0,240,240,0.4)]">
                 <h3 class="font-righteous text-2xl md:text-3xl text-festivalGold mb-2 uppercase tracking-widest animate-pulse">Ayo Meriahkan!</h3>
-                <h2 class="font-righteous font-black text-3xl md:text-4xl text-neonPink mb-6 uppercase">Unduh Twibbon Resmi</h2>
+                <h2 class="font-righteous font-black text-3xl md:text-4xl text-neonPink mb-6 uppercase">Unduh Twibbon </h2>
                 <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto">
-                    Ayo tunjukkan dukunganmu dengan memasang Twibbon resmi dan membagikannya di media sosial favoritmu sebelum acara dimulai!
+                    Ayo tunjukkan dukunganmu dengan memasang Twibbon dan membagikannya di media sosial favoritmu sebelum acara dimulai!
                 </p>
                 <button onclick="openTwibbonModal()" class="btn-retro py-4 px-10 rounded-full text-base uppercase tracking-widest flex items-center justify-center gap-3 mx-auto shadow-[0_0_15px_#FF007F]">
                     <i class="fa-solid fa-download text-lg animate-bounce"></i> Ambil Twibbon Anda
@@ -820,11 +827,11 @@
                 </div>
 
                 <!-- Grid Polaroid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-10">
                     
                     <!-- Polaroid 1 -->
                     <div class="polaroid reveal-on-scroll delay-100">
-                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[1/1] relative group">
                             <img src="https://picsum.photos/id/1012/600/450" alt="Kebersamaan" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
                             <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Awal Perjuangan</p>
@@ -835,7 +842,7 @@
 
                     <!-- Polaroid 2 -->
                     <div class="polaroid reveal-on-scroll delay-200">
-                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[1/1] relative group">
                             <img src="https://picsum.photos/id/1033/600/450" alt="Rapat Project" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
                             <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Malam Kreatif</p>
@@ -846,7 +853,7 @@
 
                     <!-- Polaroid 3 -->
                     <div class="polaroid reveal-on-scroll delay-300">
-                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[1/1] relative group">
                             <img src="https://picsum.photos/id/1059/600/450" alt="Event Besar" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
                             <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Hari Kebahagiaan</p>
@@ -857,7 +864,7 @@
 
                     <!-- Polaroid 4 -->
                     <div class="polaroid reveal-on-scroll delay-100">
-                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[1/1] relative group">
                             <img src="https://picsum.photos/id/1062/600/450" alt="Tawa Bersama" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
                             <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Senyum Abadi</p>
@@ -868,7 +875,7 @@
 
                     <!-- Polaroid 5 -->
                     <div class="polaroid reveal-on-scroll delay-200">
-                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[1/1] relative group">
                             <img src="https://picsum.photos/id/1074/600/450" alt="Outing Bersama" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
                             <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Puncak Petualangan</p>
@@ -879,7 +886,7 @@
 
                     <!-- Polaroid 6 -->
                     <div class="polaroid reveal-on-scroll delay-300">
-                        <div class="overflow-hidden bg-retroCharcoal aspect-[4/3] relative group">
+                        <div class="overflow-hidden bg-retroCharcoal aspect-[1/1] relative group">
                             <img src="https://picsum.photos/id/1084/600/450" alt="Rencana Masa Depan" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0">
                             <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <p class="text-cyanGlow font-bold font-righteous uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-shadow">Gerbang Regenerasi</p>
@@ -936,8 +943,7 @@
                 </div>
 
                 <p class="text-xs text-gray-400 reveal-on-scroll">
-                    &copy; 2026 Regenerasi Farewell Committee. All Rights Reserved.<br>
-                    Crafted with Love, Nostalgia, and Neon Retro Vibes.
+                    &copy; PDD Regenerasi 2026 
                 </p>
             </div>
         </footer>
@@ -967,8 +973,8 @@
                 <div class="border-2 border-magicPurple p-4 rounded-xl bg-retroCharcoal text-center flex flex-col justify-between items-center shadow-md transition-transform duration-300 hover:scale-[1.03] hover:border-neonPink">
                     <!-- Ilustrasi Frame Twibbon -->
                     <div class="relative w-36 h-36 border-4 border-neonPink rounded-lg overflow-hidden bg-midnightBlue flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(255,0,127,0.3)]">
-                        <div class="absolute inset-2 border border-dashed border-cyanGlow flex items-center justify-center">
-                            <i class="fa-solid fa-user-tie text-5xl text-neonPink text-opacity-30"></i>
+                        <div class="absolute inset-0 flex items-center justify-center p-2">
+                            <img src="twibbon-senior.png" class="w-full h-full object-contain opacity-60">
                         </div>
                         <div class="absolute bottom-0 inset-x-0 bg-neonPink py-1 text-[10px] text-white font-righteous tracking-widest font-bold uppercase text-center">SENIOR ASISTEN</div>
                     </div>
@@ -985,8 +991,8 @@
                 <div class="border-2 border-magicPurple p-4 rounded-xl bg-retroCharcoal text-center flex flex-col justify-between items-center shadow-md transition-transform duration-300 hover:scale-[1.03] hover:border-cyanGlow">
                     <!-- Ilustrasi Frame Twibbon -->
                     <div class="relative w-36 h-36 border-4 border-cyanGlow rounded-lg overflow-hidden bg-midnightBlue flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(0,240,240,0.3)]">
-                        <div class="absolute inset-2 border border-dashed border-neonPink flex items-center justify-center">
-                            <i class="fa-solid fa-user text-5xl text-cyanGlow text-opacity-30"></i>
+                        <div class="absolute inset-0 flex items-center justify-center p-2">
+                            <img src="twibbon-junior.png" class="w-full h-full object-contain opacity-60">
                         </div>
                         <div class="absolute bottom-0 inset-x-0 bg-cyanGlow py-1 text-[9px] text-retroCharcoal font-righteous tracking-widest font-bold uppercase text-center">JUNIOR ASISTEN</div>
                     </div>
@@ -1198,48 +1204,22 @@
             btn.style.pointerEvents = 'none';
             loader.style.transform = 'translateX(0)';
 
-            // Setelah transisi loading selesai (2 detik), generate PNG
+            // Setelah transisi loading selesai (2 detik), unduh file asli
             setTimeout(() => {
                 closeTwibbonModal();
                 
-                const canvas = document.createElement('canvas');
-                canvas.width = 800;
-                canvas.height = 800;
-                const ctx = canvas.getContext('2d');
+                // --- ATUR PATH FILE TWIBBON KAMU DI SINI ---
+                let fileUrl = '';
+                if (twibbonType === 'Asisten') {
+                    fileUrl = 'twibbon-senior.png'; // Nama file gambar Senior Asisten
+                } else {
+                    fileUrl = 'twibbon-junior.png'; // Nama file gambar Junior Asisten
+                }
 
-                // Latar belakang gradasi neon
-                const grad = ctx.createLinearGradient(0, 0, 800, 800);
-                grad.addColorStop(0, '#2E0854');
-                grad.addColorStop(1, '#1A1371');
-                ctx.fillStyle = grad;
-                ctx.fillRect(0, 0, 800, 800);
-
-                // Frame transparan di tengah
-                ctx.clearRect(120, 120, 560, 480);
-                ctx.lineWidth = 15;
-                ctx.strokeStyle = twibbonType === 'Asisten' ? '#FF007F' : '#00F0F0';
-                ctx.strokeRect(120, 120, 560, 480);
-
-                // Judul
-                ctx.fillStyle = '#FFD700';
-                ctx.font = 'bold 36px Courier New';
-                ctx.textAlign = 'center';
-                ctx.fillText('REGENERASI 2026', 400, 680);
-                
-                ctx.fillStyle = '#00F0F0';
-                ctx.font = 'italic 24px Georgia';
-                ctx.fillText('Let\'s Celebrate the Memories!', 400, 725);
-
-                ctx.fillStyle = twibbonType === 'Asisten' ? '#FF007F' : '#00F0F0';
-                ctx.fillRect(250, 40, 300, 50);
-                ctx.fillStyle = '#120224';
-                ctx.font = 'bold 24px Arial';
-                ctx.fillText(twibbonType.toUpperCase(), 400, 75);
-
-                const imageURL = canvas.toDataURL("image/png");
+                // Proses download file asli
                 const link = document.createElement('a');
                 link.download = `Twibbon_${twibbonType.replace(/\s+/g, '_')}_Regenerasi2026.png`;
-                link.href = imageURL;
+                link.href = fileUrl;
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
