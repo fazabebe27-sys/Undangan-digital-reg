@@ -21,14 +21,15 @@
             theme: {
                 extend: {
                     colors: {
-                        deepPurple: '#2E0854',
-                        midnightBlue: '#1A1371',
-                        cyanGlow: '#00F0F0',
-                        neonPink: '#FF007F',
-                        festivalGold: '#FFD700',
-                        magicPurple: '#BA2BE2',
-                        sunsetOrange: '#FF5722',
-                        retroCharcoal: '#120224'
+                        deepPurple: '#F0E3F7',
+                        midnightBlue: '#F6EDC7',
+                        cyanGlow: '#5FA8B8',
+                        neonPink: '#D96A8A',
+                        festivalGold: '#E9C35B',
+                        magicPurple: '#B88DD5',
+                        sunsetOrange: '#E4A06F',
+                        retroCharcoal: '#F9F0C8',
+                        retroCream: '#FFFDF8'
                     }
                 }
             }
@@ -46,10 +47,36 @@
 
         body {
             font-family: var(--font-poppins);
-            background-color: #120224; /* retroCharcoal / Deep Purple base */
-            color: #FAF6EE; 
+            background-color: #F9F2D8;
+            color: #4C3C33;
             overflow-x: hidden;
             scroll-behavior: smooth;
+        }
+
+        body, p, li, span, a, strong, b, em, small, label {
+            color: #4C3C33;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #2F211C;
+        }
+
+        .text-gray-300, .text-gray-200, .text-gray-400, .text-white, .text-gray-100,
+        .text-cyanGlow, .text-neonPink, .text-festivalGold, .text-magicPurple, .text-deepPurple,
+        .text-midnightBlue, .text-sunsetOrange, .text-retroCream {
+            color: #4A3B35 !important;
+        }
+
+        .bg-retroCharcoal {
+            background-color: #F9F0C8 !important;
+        }
+
+        .bg-deepPurple {
+            background-color: #EFE1F3 !important;
+        }
+
+        .text-retroCream {
+            color: #4C3C33 !important;
         }
 
         h1 {
@@ -84,32 +111,32 @@
         /* Gaya Tirai Festival Neon (Deep Purple & Magic Purple) */
         .curtain-container {
             z-index: 100;
-            background: rgba(10, 2, 20, 0.99);
+            background: rgba(249, 242, 216, 0.97);
             transition: opacity 1s ease-in-out;
         }
         
         .curtain-half {
-            background-color: #2E0854;
+            background-color: #F7E9B6;
             background-image: 
                 repeating-linear-gradient(90deg, 
-                    rgba(255, 0, 127, 0.15) 0px, 
-                    rgba(255, 0, 127, 0.15) 30px, 
+                    rgba(217, 106, 138, 0.12) 0px, 
+                    rgba(217, 106, 138, 0.12) 30px, 
                     transparent 30px, 
                     transparent 60px
                 ),
-                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+                linear-gradient(rgba(255, 255, 255, 0.33), rgba(249, 240, 200, 0.74));
+            box-shadow: inset 0 0 100px rgba(255,255,255,0.45);
             transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
         .curtain-left {
-            border-right: 8px double #FF007F;
-            filter: drop-shadow(5px 0px 15px rgba(255, 0, 127, 0.5));
+            border-right: 8px double #E96A9A;
+            filter: drop-shadow(5px 0px 15px rgba(233, 106, 154, 0.2));
         }
 
         .curtain-right {
-            border-left: 8px double #00F0F0;
-            filter: drop-shadow(-5px 0px 15px rgba(0, 240, 240, 0.5));
+            border-left: 8px double #4DB4C8;
+            filter: drop-shadow(-5px 0px 15px rgba(77, 180, 200, 0.2));
         }
 
         .curtains-open .curtain-left {
@@ -223,19 +250,19 @@
 
         /* Grid Cyber Retro */
         .retro-grid {
-            background-color: #120224;
+            background-color: #FFFDF4;
             background-image: 
-                linear-gradient(rgba(186, 43, 226, 0.08) 1px, transparent 0),
-                linear-gradient(90deg, rgba(186, 43, 226, 0.08) 1px, transparent 0);
+                linear-gradient(rgba(200, 154, 232, 0.14) 1px, transparent 0),
+                linear-gradient(90deg, rgba(200, 154, 232, 0.14) 1px, transparent 0);
             background-size: 30px 30px;
         }
 
         /* Desain Tiket Festival Neon */
         .ticket {
-            background: #1A1371;
-            border: 4px solid #00F0F0;
+            background: #FFFDF4;
+            border: 4px solid #4DB4C8;
             border-radius: 12px;
-            box-shadow: 0 0 30px rgba(0, 240, 240, 0.4), inset 0 0 15px rgba(0, 240, 240, 0.2);
+            box-shadow: 0 0 18px rgba(77, 180, 200, 0.14), inset 0 0 10px rgba(77, 180, 200, 0.1);
             position: relative;
             padding: 24px;
             max-width: 480px;
@@ -250,9 +277,9 @@
             top: 50%;
             width: 30px;
             height: 30px;
-            background: #120224;
+            background: #FFFDF4;
             border-radius: 50%;
-            border: 4px solid #00F0F0;
+            border: 4px solid #4DB4C8;
             margin-top: -15px;
             z-index: 2;
         }
@@ -272,7 +299,7 @@
         }
 
         .ticket-dashed {
-            border-top: 3px dashed #FF007F;
+            border-top: 3px dashed #E96A9A;
             height: 2px;
             margin: 20px 0;
             width: 100%;
@@ -280,11 +307,11 @@
 
         /* Neon Glow Retro Button */
         .btn-retro {
-            background: #FF007F;
-            color: #FAF6EE;
-            border: 3px solid #00F0F0;
-            box-shadow: 4px 4px 0px #BA2BE2;
-            text-shadow: 0 0 5px rgba(255,255,255,0.6);
+            background: #E96A9A;
+            color: #4A3B35;
+            border: 3px solid #4DB4C8;
+            box-shadow: 4px 4px 0px #C89AE8;
+            text-shadow: none;
             transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.1), box-shadow 0.2s ease, background-color 0.2s ease;
             position: relative;
             font-family: var(--font-righteous);
@@ -292,32 +319,32 @@
 
         .btn-retro:hover {
             transform: translate(-3px, -3px);
-            box-shadow: 7px 7px 0px #00F0F0;
-            background-color: #ff1a8c;
+            box-shadow: 7px 7px 0px #4DB4C8;
+            background-color: #E3799C;
         }
 
         .btn-retro:active {
             transform: translate(3px, 3px);
-            box-shadow: 1px 1px 0px #00F0F0;
+            box-shadow: 1px 1px 0px #4DB4C8;
         }
 
         .btn-retro-gold {
-            background: #FFD700;
-            color: #120224;
-            border: 3px solid #FF007F;
-            box-shadow: 4px 4px 0px #00F0F0;
+            background: #F2C84B;
+            color: #4A3B35;
+            border: 3px solid #E96A9A;
+            box-shadow: 4px 4px 0px #4DB4C8;
             transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.1), box-shadow 0.2s ease, background-color 0.2s ease;
             font-family: var(--font-righteous);
         }
 
         .btn-retro-gold:hover {
             transform: translate(-3px, -3px);
-            box-shadow: 7px 7px 0px #FF007F;
+            box-shadow: 7px 7px 0px #E96A9A;
         }
 
         .btn-retro-gold:active {
             transform: translate(3px, 3px);
-            box-shadow: 1px 1px 0px #FF007F;
+            box-shadow: 1px 1px 0px #E96A9A;
         }
 
         /* Floating Vinyl Neon Player */
@@ -380,10 +407,10 @@
 
         /* Polaroid Cyber Style */
         .polaroid {
-            background: #1A1371;
+            background: #FFFDF4;
             padding: 8px 8px 16px 8px; /* Memperkecil space kosong di mobile */
-            border: 2px solid #FF007F;
-            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+            border: 2px solid #E96A9A;
+            box-shadow: 0 0 15px rgba(233, 106, 154, 0.2);
             transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
             transform: rotate(-1.5deg);
         }
@@ -408,16 +435,16 @@
 
         /* Cyberpunk Cards */
         .retro-card {
-            border: 3px solid #BA2BE2;
-            background: #1A1371;
-            box-shadow: 6px 6px 0px #FF007F;
+            border: 3px solid #C89AE8;
+            background: #FFFDF4;
+            box-shadow: 6px 6px 0px #E96A9A;
             transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
         }
 
         .retro-card:hover {
             transform: translateY(-8px) scale(1.02);
-            border-color: #00F0F0;
-            box-shadow: 10px 10px 0px #00F0F0;
+            border-color: #4DB4C8;
+            box-shadow: 10px 10px 0px #4DB4C8;
         }
 
         /* Timeline Event Style & Timeline Bullet Hover Wave */
@@ -426,9 +453,9 @@
         }
         .timeline-step:hover .timeline-bullet {
             transform: scale(1.2) rotate(10deg);
-            background-color: #FF007F !important;
-            color: #FAF6EE !important;
-            box-shadow: 0 0 15px #FF007F;
+            background-color: #E96A9A !important;
+            color: #4A3B35 !important;
+            box-shadow: 0 0 15px #E96A9A;
         }
 
         .timeline-step::before {
@@ -1289,7 +1316,7 @@
                 }
             }
 
-            const colors = ['#2E0854', '#1A1371', '#00F0F0', '#FF007F', '#FFD700', '#FF5722'];
+            const colors = ['#F3E3F8', '#FFF4C8', '#4DB4C8', '#E96A9A', '#F2C84B', '#EEA06E'];
 
             function launchFirework() {
                 const targetX = Math.random() * width;
