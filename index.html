@@ -719,7 +719,7 @@
                         <!-- EDIT: Ubah Tanggal Sesuai Kebutuhan -->
                         <p class="font-bold text-lg text-white mb-1">Jumat, 28 Agustus 2026</p>
                         <!-- EDIT: Ubah Jam Sesuai Kebutuhan -->
-                        <p class="text-sm text-gray-300">18:10 WIB - Selesai</p>
+                        <p class="text-sm text-gray-300">17:50 - 20.30 WIB</p>
                         <p class="text-xs text-festivalGold font-bold mt-2 italic">Gerbang Utama Dibuka: 17:50 WIB</p>
                     </div>
                     <div class="mt-6 w-full h-1 bg-cyanGlow opacity-30"></div>
@@ -959,9 +959,9 @@
         <!-- 8. FOOTER DENGAN TOMBOL RSVP -->
         <footer class="bg-deepPurple text-retroCream pt-20 pb-10 border-t-8 border-cyanGlow relative overflow-hidden">
             <!-- Decorative Sunburst background in footer -->
-            <div class="absolute inset-0 opacity-10 pointer-events-none z-0">
+            <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
                 <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50,50 L0,0 M50,50 L10,0 M50,50 L20,0 M50,50 L30,0 M50,50 L40,0 M50,50 L50,0 M50,50 L60,0 M50,50 L70,0 M50,50 L80,0 M50,50 L90,0 M50,50 L100,0 M50,50 L100,10 M50,50 L100,20 M50,50 L100,30 M50,50 L100,40 M50,50 L100,50 M50,50 L100,60 M50,50 L100,70 M50,50 L100,80 M50,50 L100,90 M50,50 L100,100 M50,50 L90,100 M50,50 L80,100 M50,50 L70,100 M50,50 L60,100 M50,50 L50,100 M50,50 L40,100 M50,50 L30,100 M50,50 L20,100 M50,50 L10,100 M50,50 L0,100 M50,50 L0,90 M50,50 L0,80 M50,50 L0,70 M50,50 L0,60 M50,50 L0,50 M50,50 L0,40 M50,50 L0,30 M50,50 L0,20 M50,50 L0,10" stroke="#00F0F0" stroke-width="0.3"/>
+                    <path d="M50,50 L0,0 M50,50 L10,0 M50,50 L20,0 M50,50 L30,0 M50,50 L40,0 M50,50 L50,0 M50,50 L60,0 M50,50 L70,0 M50,50 L80,0 M50,50 L90,0 M50,50 L100,0 M50,50 L100,10 M50,50 L100,20 M50,50 L100,30 M50,50 L100,40 M50,50 L100,50 M50,50 L100,60 M50,50 L100,70 M50,50 L100,80 M50,50 L100,90 M50,50 L100,100 M50,50 L90,100 M50,50 L80,100 M50,50 L70,100 M50,50 L60,100 M50,50 L50,100 M50,50 L40,100 M50,50 L30,100 M50,50 L20,100 M50,50 L10,100 M50,50 L0,100 M50,50 L0,90 M50,50 L0,80 M50,50 L0,70 M50,50 L0,60 M50,50 L0,50 M50,50 L0,40 M50,50 L0,30 M50,50 L0,20 M50,50 L0,10" stroke="#FFFFFF" stroke-width="0.3"/>
                 </svg>
             </div>
 
@@ -983,7 +983,7 @@
                 <p class="font-righteous text-4xl md:text-6xl text-neonPink mb-4 transform -rotate-1 reveal-on-scroll delay-200 tracking-wider">
                     SEE YOU THERE!
                 </p>
-                <div class="w-32 h-1 bg-white mx-auto my-6 reveal-on-scroll shadow-[0_0_0px_#00F0F0]"></div>
+                <div class="w-32 h-1 bg-white mx-auto my-6 reveal-on-scroll shadow-[0_0_10px_#F879B2]"></div>
 
                 <!-- SOSIAL MEDIA -->
 
@@ -1026,7 +1026,7 @@
                     <h4 class="font-righteous font-bold text-lg text-white mb-2">Twibbon Senior Asisten</h4>
                     <p class="text-xs text-gray-300 mb-4">Didesain khusus untuk jajaran senior asisten 2024.</p>
                     
-                    <button id="btn-dl-asisten" onclick="simulateDownload('Asisten')" class="btn-retro w-full py-2 text-xs uppercase tracking-wider rounded-md overflow-hidden relative">
+                    <button id="btn-dl-asisten" onclick="simulateDownload('Senior Asisten')" class="btn-retro w-full py-2 text-xs uppercase tracking-wider rounded-md overflow-hidden relative">
                         <span class="btn-text flex items-center justify-center gap-1"><i class="fa-solid fa-download"></i> Download Twibbon</span>
                         <span class="absolute inset-0 bg-cyanGlow opacity-30 pointer-events-none transform -translate-x-full transition-transform duration-[2000ms]" id="loader-asisten"></span>
                     </button>
@@ -1239,8 +1239,8 @@
 
         // 7. Unduh Twibbon riil dengan Canvas
         function simulateDownload(twibbonType) {
-            const loaderId = twibbonType === 'Asisten' ? 'loader-asisten' : 'loader-junior';
-            const btnId = twibbonType === 'Asisten' ? 'btn-dl-asisten' : 'btn-dl-junior';
+            const loaderId = twibbonType === 'Senior Asisten' ? 'loader-asisten' : 'loader-junior';
+            const btnId = twibbonType === 'Junior Asisten' ? 'btn-dl-asisten' : 'btn-dl-junior';
             
             const loader = document.getElementById(loaderId);
             const btn = document.getElementById(btnId);
