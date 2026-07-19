@@ -43,7 +43,7 @@
             --font-righteous: 'Righteous', sans-serif;
             --font-poppins: 'Poppins', sans-serif;
             --font-bungee: 'Bungee', sans-serif;
-            --hot-pink: #bf1be3;
+            --hot-pink: #e9d1f3;
             --bright-pink: #ff00847a; /*PENTING (background, page 1,2,4)*/
             --vibrant-purple: #f6b4b4; /*PENTING (footer, rundwon, logo, regenerasi, waktu)*/
             --soft-lavender: #ad1ed1;  /* Border */
@@ -247,7 +247,7 @@
         }
 
         .flag:nth-child(3n) {
-            border-top-color: var(--golden-yellow);
+            border-top-color: var(--bright-pink);
             filter: drop-shadow(0px 4px 5px rgba(255, 199, 44, 0.3));
             animation-delay: -1s;
         }
@@ -318,7 +318,7 @@
         .btn-retro {
             background: linear-gradient(135deg, var(--festival-orange), var(--golden-yellow));
             color: var(--white);
-            border: 3px solid var(--vibrant-purple);
+            border: 3px solid var(--soft-cream);
             box-shadow: 4px 4px 0px rgba(226, 173, 239, 0.7);
             text-shadow: 0 1px 2px rgba(0,0,0,0.15);
             transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.1), box-shadow 0.2s ease, filter 0.2s ease;
@@ -340,8 +340,8 @@
         .btn-retro-gold {
             background: linear-gradient(135deg, var(--golden-yellow), var(--festival-orange));
             color: var(--white);
-            border: 3px solid var(--hot-pink);
-            box-shadow: 4px 4px 0px rgba(146, 50, 235, 0.6);
+            border: 3px solid var(--soft-cream);
+            box-shadow: 4px 4px 0px rgba(226, 173, 239, 0.7);
             transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.1), box-shadow 0.2s ease, filter 0.2s ease;
             font-family: var(--font-righteous);
         }
@@ -445,9 +445,9 @@
 
         /* Cyberpunk Cards */
         .retro-card {
-            border: 3px solid var(--soft-lavender);
+            border: 3px solid var(--soft-cream);
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(249, 227, 221, 0.96));
-            box-shadow: 6px 6px 0px var(--festival-orange);
+            box-shadow: 6px 6px 0px var(--hot-pink);
             transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
         }
 
@@ -616,7 +616,7 @@
             <div class="relative z-20 flex justify-center items-center gap-8 mb-6 transition-all duration-700 ease-out transform translate-y-4 opacity-0" id="hero-logos">
                 <!-- EDIT: Ganti logo di bawah dengan URL gambar logo Anda asli -->
                 <div class="flex flex-col items-center gap-1">
-                    <div class="w-20 h-20 rounded-2xl border-2 border-neonPink flex items-center justify-center bg-deepPurple bg-white text-neonPink text-xl font-bold logo-glow shadow-[0_0_15px_#FF007F]">
+                    <div class="w-20 h-20 rounded-2xl border-2 border-neonPink flex items-center justify-center bg-white text-neonPink text-xl font-bold logo-glow shadow-[0_0_15px_#FF007F]">
                         <img src="LOGO FISIKA DASAR (2).png" alt="Logo Fisika Dasar">
                     </div>
                 </div>
@@ -625,7 +625,7 @@
 
                 <!-- EDIT: Ganti logo di bawah dengan URL logo asli Anda -->
                 <div class="flex flex-col items-center gap-1">
-                    <div class="w-20 h-20 rounded-2xl border-2 border-cyanGlow flex items-center justify-center bg-deepPurple bg-opacity-95 text-cyanGlow text-xl font-bold logo-glow shadow-[0_0_15px_#00F0F0]">
+                    <div class="w-20 h-20 rounded-2xl border-2 border-cyanGlow flex items-center justify-center bg-white bg-opacity-95 text-cyanGlow text-xl font-bold logo-glow shadow-[0_0_10px_#4D2FB2]">
                         <img src="LOGO REGEN 26.png" alt="Logo Regenerasi 2026">
                     </div>
                 </div>
@@ -633,8 +633,8 @@
 
             <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
                 <!-- Badge Atas -->
-                <div class="border-double border-4 border-festivalGold p-2 inline-block mb-6 rounded-lg bg-deepPurple bg-opacity-90 transition-all duration-700 ease-out transform translate-y-4 opacity-0" id="hero-badge">
-                    <p class="text-xs md:text-sm tracking-widest text-cyanGlow font-bold font-righteous px-4 py-1 uppercase">REGENERASI 2026</p>
+                <div class="border-double border-4 border-white p-2 inline-block mb-6 rounded-lg bg-deepPurple bg-opacity-90 transition-all duration-700 ease-out transform translate-y-4 opacity-0" id="hero-badge">
+                    <p class="text-l md:text-sm tracking-widest text-cyanGlow font-bold font-righteous px-4 py-1 uppercase">REGENERASI 2026</p>
                 </div>
 
                 <!-- Judul Utama (Font: Monoton) -->
@@ -643,12 +643,12 @@
                 </h1>
 
                 <!-- Subjudul (Font: Righteous) -->
-                <p class="font-righteous text-3xl sm:text-4xl md:text-5xl text-festivalGold mb-6 -rotate-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)] filter hover:rotate-0 transition-all duration-1000 delay-400 ease-out transform translate-y-6 opacity-0 uppercase tracking-widest" id="hero-subtitle">
+                <p class="font-righteous text-3xl sm:text-4xl md:text-5xl text-festivalGold mb-6 -rotate-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0)] filter hover:rotate-0 transition-all duration-1000 delay-400 ease-out transform translate-y-6 opacity-0 uppercase tracking-widest" id="hero-subtitle">
                     Let’s Celebrate the Memories!
                 </p>
 
                 <!-- COUNTDOWN TIMER SECTION (Font: Bungee) -->
-                <div class="mb-8 p-6 bg-deepPurple bg-opacity-80 rounded-2xl border-2 border-cyanGlow shadow-[0_0_20px_rgba(0,240,240,0.3)] transition-all duration-1000 delay-500 ease-out transform translate-y-6 opacity-0" id="hero-countdown">
+                <div class="mb-8 p-6 bg-deepPurple bg-opacity-80 rounded-2xl border-2 border-white shadow-[0_0_20px_rgba(0,240,240,0.3)] transition-all duration-1000 delay-500 ease-out transform translate-y-6 opacity-0" id="hero-countdown">
                     <p class="text-xs font-righteous text-cyanGlow tracking-widest uppercase mb-3">Waktu Tersisa Menuju Gerbang Festival</p>
                     <div class="grid grid-cols-4 gap-4 max-w-sm mx-auto font-bungee text-2xl md:text-3xl text-sunsetOrange">
                         <div class="bg-retroCharcoal p-2 rounded-lg border border-neonPink">
@@ -703,7 +703,7 @@
         <section id="details-section" class="py-20 px-4 max-w-6xl mx-auto relative z-20 overflow-hidden">
             <div class="text-center mb-16 reveal-on-scroll">
                 <h2 class="text-4xl md:text-5xl font-black text-neonPink uppercase tracking-widest font-righteous">Informasi Festival</h2>
-                <div class="w-24 h-1 bg-cyanGlow mx-auto mt-2 shadow-[0_0_10px_#00F0F0]"></div>
+                <div class="w-28 h-1 bg-white mx-auto mt-2 shadow-[0_0_10px_#00F0F0]"></div>
                 <p class="text-sm italic text-gray-300 mt-2">Pastikan kehadiran Anda di malam bersejarah ini</p>
             </div>
 
@@ -841,7 +841,7 @@
 
         <!-- 5. TOMBOL INTERAKTIF: TWIBBON GENERATOR -->
         <section class="py-20 px-4 text-center max-w-4xl mx-auto reveal-on-scroll">
-            <div class="retro-card bg-gradient-to-br from-deepPurple to-midnightBlue p-8 md:p-12 rounded-2xl border-double border-8 border-cyanGlow shadow-[0_0_20px_rgba(0,240,240,0.4)]">
+            <div class="retro-card bg-gradient-to-br from-sunsetOrange to-festivalGold p-8 md:p-12 rounded-2xl border-double border-8 border-cyanGlow shadow-[0_0_20px_rgba(0,240,240,0.4)]">
                 <h3 class="font-righteous text-2xl md:text-3xl text-festivalGold mb-2 uppercase tracking-widest animate-pulse">Ayo Meriahkan!</h3>
                 <h2 class="font-righteous font-black text-3xl md:text-4xl text-neonPink mb-6 uppercase">Unduh Twibbon </h2>
                 <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto">
@@ -964,7 +964,7 @@
                 <p class="font-righteous text-4xl md:text-6xl text-neonPink mb-4 transform -rotate-1 reveal-on-scroll delay-200 tracking-wider">
                     SEE YOU THERE!
                 </p>
-                <div class="w-32 h-1 bg-white mx-auto my-6 reveal-on-scroll shadow-[0_0_8px_#00F0F0]"></div>
+                <div class="w-32 h-1 bg-white mx-auto my-6 reveal-on-scroll shadow-[0_0_0px_#00F0F0]"></div>
 
                 <!-- SOSIAL MEDIA -->
 
@@ -998,11 +998,11 @@
                 <!-- Twibbon Kartu 1: Asisten -->
                 <div class="border-2 border-magicPurple p-4 rounded-xl bg-retroCharcoal text-center flex flex-col justify-between items-center shadow-md transition-transform duration-300 hover:scale-[1.03] hover:border-neonPink">
                     <!-- Ilustrasi Frame Twibbon -->
-                    <div class="relative w-36 h-36 border-4 border-neonPink rounded-lg overflow-hidden bg-midnightBlue flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(255,0,127,0.3)]">
+                    <div class="relative w-36 h-36 border-4 border-neonPink rounded-lg overflow-hidden bg-deepPurple flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(255,0,127,0.3)]">
                         <div class="absolute inset-0 flex items-center justify-center p-2">
                             <img src="twibbon-senior.png" alt="Twibbon senior" class="w-full h-full object-contain opacity-60">
                         </div>
-                        <div class="absolute bottom-0 inset-x-0 bg-neonPink py-1 text-[10px] text-white font-righteous tracking-widest font-bold uppercase text-center">SENIOR ASISTEN</div>
+                        <div class="absolute bottom-0 inset-x-0 bg-neonPink py-1 text-[10px] text-retroCharcoal font-righteous tracking-widest font-bold uppercase text-center">SENIOR ASISTEN</div>
                     </div>
                     <h4 class="font-righteous font-bold text-lg text-white mb-2">Twibbon Senior Asisten</h4>
                     <p class="text-xs text-gray-300 mb-4">Didesain khusus untuk jajaran senior asisten 2024.</p>
@@ -1016,7 +1016,7 @@
                 <!-- Twibbon Kartu 2: Junior Asisten -->
                 <div class="border-2 border-magicPurple p-4 rounded-xl bg-retroCharcoal text-center flex flex-col justify-between items-center shadow-md transition-transform duration-300 hover:scale-[1.03] hover:border-cyanGlow">
                     <!-- Ilustrasi Frame Twibbon -->
-                    <div class="relative w-36 h-36 border-4 border-cyanGlow rounded-lg overflow-hidden bg-midnightBlue flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(0,240,240,0.3)]">
+                    <div class="relative w-36 h-36 border-4 border-cyanGlow rounded-lg overflow-hidden bg-deepPurple flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(0,240,240,0.3)]">
                         <div class="absolute inset-0 flex items-center justify-center p-2">
                             <img src="twibbon-junior.png" alt="Twibbon junior" class="w-full h-full object-contain opacity-60">
                         </div>
