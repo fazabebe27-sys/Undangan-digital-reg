@@ -1251,7 +1251,7 @@
         // 7. Unduh Twibbon riil dengan Canvas
         function simulateDownload(twibbonType) {
             const loaderId = twibbonType === 'Senior Asisten' ? 'loader-asisten' : 'loader-junior';
-            const btnId = twibbonType === 'Junior Asisten' ? 'btn-dl-asisten' : 'btn-dl-junior';
+            const btnId = twibbonType === 'Senior Asisten' ? 'btn-dl-asisten' : 'btn-dl-junior';
             
             const loader = document.getElementById(loaderId);
             const btn = document.getElementById(btnId);
@@ -1265,10 +1265,10 @@
                 
                 // --- ATUR PATH FILE TWIBBON KAMU DI SINI ---
                 let fileUrl = '';
-                if (twibbonType === 'Asisten') {
-                    fileUrl = 'twibbon-senior.png'; // Nama file gambar Senior Asisten
+                if (twibbonType === 'Senior Asisten') {
+                    fileUrl = 'SENIOR.png'; // Nama file gambar Senior Asisten
                 } else {
-                    fileUrl = 'twibbon-junior.png'; // Nama file gambar Junior Asisten
+                    fileUrl = 'JUNIOR.png'; // Nama file gambar Junior Asisten
                 }
 
                 // Proses download file asli
