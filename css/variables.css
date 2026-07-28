@@ -1,0 +1,106 @@
+        :root {
+        --font-monoton: 'Monoton', sans-serif;
+        --font-righteous: 'Righteous', sans-serif;
+        --font-poppins: 'Poppins', sans-serif;
+        --font-bungee: 'Bungee', sans-serif;
+        --hot-pink: #e9d1f3;
+        --bright-pink: #ff00847a;
+        --vibrant-purple: #f6b4b4;
+        --soft-lavender: #ad1ed1;
+        --festival-orange: #F8A939;
+        --golden-yellow: #FFC72C;
+        --soft-cream: #f9ddf8;
+        --white: #FFFFFF;
+        --text-dark: #682095d4;
+
+        --shadow-card: 0 0 18px rgba(248, 169, 57, 0.2);
+        --shadow-highlight: 0 0 20px rgba(0, 240, 240, 0.3);
+        --radius-lg: 1rem;
+        --radius-xl: 1.5rem;
+        }
+
+        html {
+        scroll-behavior: smooth;
+        }
+
+        body {
+        font-family: var(--font-poppins);
+        color: var(--text-dark);
+        overflow-x: hidden;
+        background: radial-gradient(circle at top left, rgba(248, 121, 178, 0.8), transparent 30%),
+            linear-gradient(140deg, var(--soft-cream) 0%, var(--bright-pink) 45%, var(--hot-pink) 100%);
+        }
+
+        body,
+        p,
+        li,
+        span,
+        a,
+        strong,
+        b,
+        em,
+        small,
+        label {
+        color: var(--text-dark);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+        color: var(--vibrant-purple);
+        }
+
+        .text-gray-300,
+        .text-gray-200,
+        .text-gray-400,
+        .text-white,
+        .text-gray-100,
+        .text-cyanGlow,
+        .text-neonPink,
+        .text-festivalGold,
+        .text-magicPurple,
+        .text-deepPurple,
+        .text-midnightBlue,
+        .text-sunsetOrange,
+        .text-retroCream {
+        color: var(--text-dark) !important;
+        }
+
+        .bg-retroCharcoal {
+        background-color: var(--soft-cream) !important;
+        }
+
+        .bg-deepPurple {
+        background-color: var(--vibrant-purple) !important;
+        }
+
+        .text-retroCream {
+        color: var(--white) !important;
+        }
+
+        h1 {
+        font-family: var(--font-monoton);
+        }
+
+        #hero-title {
+        color: var(--white) !important;
+        text-shadow: 0 0 12px rgba(40, 37, 232, 0.73), 0 0 24px rgba(146, 50, 235, 0.35);
+        }
+
+        .hero-title-display {
+        word-spacing: 15px;
+        }
+
+        h2,
+        h3,
+        h4,
+        .font-righteous {
+        font-family: var(--font-righteous);
+        }
+
+        .font-bungee {
+        font-family: var(--font-bungee);
+        }

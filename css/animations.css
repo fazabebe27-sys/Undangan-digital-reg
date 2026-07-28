@@ -1,0 +1,165 @@
+        /* 1. ANIMASI TRANSISI SCROLL REVEAL */
+        .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, opacity;
+        }
+
+        .reveal-active {
+        opacity: 1;
+        transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Neon String Lights */
+        .lightrope {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        position: absolute;
+        z-index: 10;
+        margin: -15px 0 0 0;
+        padding: 0;
+        pointer-events: none;
+        width: 100%;
+        }
+
+        .lightrope li {
+        position: relative;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin: 15px;
+        background: var(--hot-pink);
+        box-shadow: 0px 4px 24px 3px rgba(238, 62, 149, 1);
+        animation-name: flash-pink;
+        animation-duration: 2s;
+        }
+
+        .lightrope li:nth-child(2n+1) {
+        background: var(--vibrant-purple);
+        box-shadow: 0px 4px 24px 3px rgba(146, 50, 235, 1);
+        animation-name: flash-purple;
+        animation-duration: 1.5s;
+        }
+
+        .lightrope li:nth-child(3n+2) {
+        background: var(--golden-yellow);
+        box-shadow: 0px 4px 24px 3px rgba(255, 199, 44, 1);
+        animation-name: flash-gold;
+        animation-duration: 2.5s;
+        }
+
+        @keyframes flash-pink {
+        0%, 100% {
+            background: var(--hot-pink);
+            box-shadow: 0px 2px 15px 2px rgba(238, 62, 149, 1);
+        }
+        50% {
+            background: rgba(238, 62, 149, 0.3);
+            box-shadow: 0px 2px 5px 0px rgba(238, 62, 149, 0.1);
+        }
+        }
+
+        @keyframes flash-purple {
+        0%, 100% {
+            background: var(--vibrant-purple);
+            box-shadow: 0px 2px 15px 2px rgba(146, 50, 235, 1);
+        }
+        50% {
+            background: rgba(146, 50, 235, 0.3);
+            box-shadow: 0px 2px 5px 0px rgba(146, 50, 235, 0.1);
+        }
+        }
+
+        @keyframes flash-gold {
+        0%, 100% {
+            background: var(--golden-yellow);
+            box-shadow: 0px 2px 15px 2px rgba(255, 199, 44, 1);
+        }
+        50% {
+            background: rgba(255, 199, 44, 0.3);
+            box-shadow: 0px 2px 5px 0px rgba(255, 199, 44, 0.1);
+        }
+        }
+
+        /* Banner Bendera Segitiga */
+        .bunting-container {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        pointer-events: none;
+        }
+
+        .flag {
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 35px solid var(--hot-pink);
+        filter: drop-shadow(0px 4px 5px rgba(238, 62, 149, 0.3));
+        transform-origin: top center;
+        animation: swing 3s ease-in-out infinite alternate;
+        }
+
+        .flag:nth-child(even) {
+        border-top-color: var(--vibrant-purple);
+        filter: drop-shadow(0px 4px 5px rgba(146, 50, 235, 0.3));
+        animation-delay: -0.5s;
+        }
+
+        .flag:nth-child(3n) {
+        border-top-color: var(--bright-pink);
+        filter: drop-shadow(0px 4px 5px rgba(255, 199, 44, 0.3));
+        animation-delay: -1s;
+        }
+
+        @keyframes swing {
+        0% { transform: rotate(-5deg); }
+        100% { transform: rotate(5deg); }
+        }
+
+        /* Vinyl Player Animations */
+        @keyframes pulse-beat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.12); box-shadow: 0 0 25px rgba(255, 0, 127, 0.9), 0 0 10px rgba(0, 240, 240, 0.6); }
+        }
+
+        @keyframes spin {
+        100% { transform: rotate(360deg); }
+        }
+
+        /* Custom Modal Transition dengan Bounce-in */
+        .modal {
+        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-card {
+        transform: scale(0.8) rotate(-3deg);
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 0 50px rgba(186, 43, 226, 0.6);
+        }
+
+        .modal.open {
+        opacity: 1;
+        visibility: visible;
+        }
+
+        .modal.open .modal-card {
+        transform: scale(1) rotate(0);
+        }
