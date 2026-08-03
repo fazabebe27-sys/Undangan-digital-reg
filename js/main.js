@@ -211,6 +211,94 @@
         if (successPopup) successPopup.classList.remove('open');
         }
 
+        function copyCaption(role) {
+        const captions = {
+            senior: `🎪✨ THE GRAND FINALE AND A NEW BEGINNING ✨🎪
+
+"Every end is a new beginning, for energy is never lost, only transformed."
+— Albert Einstein
+
+Ladies and Gentlemen! 🎩🎭
+
+The curtain has risen, the spotlight is on, and another remarkable journey is about to begin.
+
+I'm [Nama | Kode Asisten], a Senior Assistant of Physics Laboratory, and I'm proud to be part of Regenerasi Laboratorium Fisika Dasar 2026. This journey is more than welcoming new members,it's about sharing knowledge, inspiring growth, and guiding the next generation of assistants as we create meaningful experiences together! @labfisdas_telu
+
+Every challenge is an opportunity to lead, every experience is a lesson to share, and every step we take shapes a stronger future for our laboratory.
+
+🔮 𝓢𝓹𝓪𝓻𝓴 𝓣𝓸𝓰𝓮𝓽𝓱𝓮𝓻 𝓢𝓱𝓲𝓷𝓮 𝓕𝓸𝓻𝓮𝓿𝓮𝓻 🔮
+
+See you under the spotlight! 🕴️✨
+
+#TRA
+#STSF
+#REGEN26
+#TheGrandFinaleAndNewBeginning`,
+            junior: `🎪✨ BEHIND THE SCENES OF A NEW BEGINNING ✨🎪
+
+"Every end is a new beginning, for energy is never lost, only transformed."
+— Albert Einstein
+
+Ladies and Gentlemen! 🎩🎭
+
+The stage is set, the lights are up, and none of this magic happens by chance. Behind every unforgettable spotlight, there’s a team making the extraordinary possible.
+
+I’m [Nama | Kode Asisten], proud to stand as a Junior Assistant and part of the Organizing Committee for the Physics Laboratory Regeneration 2026!
+
+For us, this isn't just about organizing an event, it's about building a bridge for the next generation, growing together, and crafting an experience that leaves a legacy. @labfisdas_telu
+
+Every detail counts, every effort transforms into impact, and together, we are the force behind the magic.
+
+🔮𝓢𝓹𝓪𝓻𝓴 𝓣𝓸𝓰𝓮𝓽𝓱𝓮𝓻 𝓢𝓱𝓲𝓷𝓮 𝓕𝓸𝓻𝓮𝓿𝓮𝓻🔮
+
+See you under the spotlight! 🕴️✨
+
+#PanitiaREGEN26
+#TRA
+#STSF
+#REGEN26
+#TheGrandFinaleAndNewBeginning`
+        };
+
+        const text = captions[role] || captions.junior;
+        const buttonId = role === 'senior' ? 'btn-copy-senior' : 'btn-copy-junior';
+        const button = document.getElementById(buttonId);
+
+        if (!button) return;
+
+        const resetButton = () => {
+            button.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Caption';
+            button.classList.remove('bg-cyanGlow', 'text-retroCharcoal', 'bg-green-500');
+        };
+
+        const updateButtonFeedback = () => {
+            button.innerHTML = '<i class="fa-solid fa-check"></i> Tersalin!';
+            button.classList.add('bg-green-500', 'text-white', 'border-green-500');
+            setTimeout(resetButton, 1800);
+        };
+
+        const fallbackCopy = () => {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            updateButtonFeedback();
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text)
+            .then(() => updateButtonFeedback())
+            .catch(() => fallbackCopy());
+        } else {
+            fallbackCopy();
+        }
+        }
+
         function startFireworks() {
         const canvas = document.getElementById('fireworks-canvas');
         if (!canvas) return;
